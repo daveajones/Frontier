@@ -1,0 +1,16 @@
+//
+//  PointVerbs.swift
+//  FrontierVerbs
+//
+//  Created by Brent Simmons on 4/15/17.
+//  Copyright © 2017 Ranchero Software. All rights reserved.
+//
+
+import Foundation
+
+final class PointVerbs: NSObject, VerbTable {
+	
+	static let tableName = "point"
+	static let supportedVerbs = [String]()
+	
+}
