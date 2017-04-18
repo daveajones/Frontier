@@ -8,6 +8,11 @@
 
 import Foundation
 
+// Notes:
+// Original Frontier has its own XML parser.
+// Instead we should build on the libxml2 SAX parser.
+// RancheroXML.framework should be copied and renamed and added to this workspace.
+
 struct XMLVerbs: VerbTable {
 	
 	private enum Verb: String {
