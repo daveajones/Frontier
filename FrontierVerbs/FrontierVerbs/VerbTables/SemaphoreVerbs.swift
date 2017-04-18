@@ -11,7 +11,8 @@ import Foundation
 struct SemaphoreVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case lock = "lock"
+		case unlock = "unlock"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,17 +23,23 @@ struct SemaphoreVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .lock:
+			return lock(params)
+		case .unlock:
+			return unlock(params)
 		}
 	}
 }
 
 private extension SemaphoreVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func lock(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
-	
+
+	static func unlock(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
 }
