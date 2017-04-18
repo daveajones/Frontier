@@ -11,7 +11,8 @@ import Foundation
 struct PointVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case get = "get"
+		case set = "set"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,15 +23,22 @@ struct PointVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .get:
+			return get(params)
+		case .set:
+			return set(params)
 		}
 	}
 }
 
 private extension PointVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func get(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func set(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
