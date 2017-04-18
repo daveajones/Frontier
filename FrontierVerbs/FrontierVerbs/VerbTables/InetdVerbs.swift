@@ -11,7 +11,7 @@ import Foundation
 struct InetdVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case supervisor = "supervisor"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,15 +22,15 @@ struct InetdVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .supervisor:
+			return supervisor(params)
 		}
 	}
 }
 
 private extension InetdVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func supervisor(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
