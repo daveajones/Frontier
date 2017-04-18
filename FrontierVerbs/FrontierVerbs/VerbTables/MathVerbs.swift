@@ -11,7 +11,9 @@ import Foundation
 struct MathVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case min = "min"
+		case max = "max"
+		case sqrt = "sqrt"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,15 +24,29 @@ struct MathVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .min:
+			return min(params)
+		case .max:
+			return max(params)
+		case .sqrt:
+			return sqrt(params)
 		}
 	}
 }
 
 private extension MathVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func min(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func max(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func sqrt(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
