@@ -29,7 +29,7 @@ struct XMLVerbs: VerbTable {
 		case frontierValueToTaggedText = "frontiervaluetotaggedtext"
 		case structToFrontierValue = "structtofrontiervalue"
 		case getPathAddress = "getpathaddress"
-		case convertToDisplayName = "convertToDisplayName"
+		case convertToDisplayName = "converttodisplayname"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
