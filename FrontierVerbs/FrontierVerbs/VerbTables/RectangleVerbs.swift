@@ -14,7 +14,8 @@ import Foundation
 struct RectangleVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case get = "get"
+		case set = "set"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
