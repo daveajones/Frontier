@@ -1,5 +1,5 @@
 //
-//  OSAVerbs.swift
+//  RGBVerbs.swift
 //  FrontierVerbs
 //
 //  Created by Brent Simmons on 4/15/17.
@@ -9,12 +9,13 @@
 import Foundation
 
 // No longer implemented.
-// These were for QuickDraw Rects, which are not the same as CGRect and NSRect.
+// These were for QuickDraw RGB structures, which are no longer relevant.
 
 struct RGBVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case get = "get"
+		case set = "set"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
