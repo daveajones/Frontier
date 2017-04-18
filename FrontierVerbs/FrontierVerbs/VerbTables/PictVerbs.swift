@@ -1,5 +1,5 @@
 //
-//  OSAVerbs.swift
+//  PictVerbs.swift
 //  FrontierVerbs
 //
 //  Created by Brent Simmons on 4/15/17.

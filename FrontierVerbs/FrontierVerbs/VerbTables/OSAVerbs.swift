@@ -11,7 +11,8 @@ import Foundation
 struct OSAVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case compile = "compile"
+		case getSource = "getsource"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,15 +23,22 @@ struct OSAVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .compile:
+			return compile(params)
+		case .getSource:
+			return getSource(params)
 		}
 	}
 }
 
 private extension OSAVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func compile(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func getSource(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
