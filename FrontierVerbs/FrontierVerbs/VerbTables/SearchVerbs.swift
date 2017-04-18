@@ -11,7 +11,10 @@ import Foundation
 struct SearchVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case reset = "reset"
+		case findNext = "findnext"
+		case replace = "replace"
+		case replaceAll = "replaceall"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,17 +25,39 @@ struct SearchVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .reset:
+			return reset(params)
+		case .findNext:
+			return findNext(params)
+		case .replace:
+			return replace(params)
+		case .replaceAll:
+			return replaceAll(params)
 		}
 	}
 }
 
 private extension SearchVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func reset(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+
+	static func findNext(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
 	
+	static func replace(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func replaceAll(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+
 }
