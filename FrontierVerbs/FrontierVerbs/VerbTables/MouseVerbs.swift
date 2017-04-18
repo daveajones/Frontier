@@ -11,7 +11,8 @@ import Foundation
 struct MouseVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case button = "button"
+		case location = "location"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,15 +23,22 @@ struct MouseVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .button:
+			return button(params)
+		case .location:
+			return location(params)
 		}
 	}
 }
 
 private extension MouseVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func button(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func location(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
