@@ -24,6 +24,8 @@ struct VerbResult {
 	static let tooFewParams = VerbResult(error: .tooFewParams)
 	static let notImplemented = VerbResult(error: .notImplemented)
 	static let noLongerImplemented = VerbResult(error: .noLongerImplemented)
+	static let verbTrue = VerbResult(value: true)
+	static let verbFalse = VerbResult(value: false)
 	
 	let value: Any?
 	let error: Error?

@@ -11,7 +11,9 @@ import Foundation
 struct SpeakerVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case beep = "beep"
+		case sound = "sound"
+		case playNamedSound = "playnamedsound"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,17 +24,34 @@ struct SpeakerVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .beep:
+			return beep(params)
+		case .sound:
+			return sound(params)
+		case .playNamedSound:
+			return playNamedSound(params)
 		}
 	}
 }
 
 private extension SpeakerVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func beep(_ params: VerbParams) -> VerbResult {
+		
+		NSBeep()
+		return VerbResult.verbTrue
+	}
+
+	static func sound(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
 	
+
+	static func playNamedSound(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+
 }
