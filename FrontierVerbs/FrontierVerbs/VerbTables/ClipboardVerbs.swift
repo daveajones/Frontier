@@ -8,9 +8,38 @@
 
 import Foundation
 
-final class ClipboardVerbs: NSObject, VerbTable {
+struct ClipboardVerbs: VerbTable {
 	
-	static let tableName = "clipboard"
-	static let supportedVerbs = [String]()
+	private enum Verb: String {
+		case get = "get"
+		case put = "put"
+	}
 	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .get:
+			return get(params)
+		case .put:
+			return put(params)
+		}
+	}
+}
+
+private extension ClipboardVerbs {
+	
+	static func get(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func put(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
 }

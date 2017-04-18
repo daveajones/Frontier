@@ -1,5 +1,5 @@
 //
-//  TargetVerbs.swift
+//  OSAVerbs.swift
 //  FrontierVerbs
 //
 //  Created by Brent Simmons on 4/15/17.
@@ -8,31 +8,23 @@
 
 import Foundation
 
-struct TargetVerbs: VerbTable {
+// No longer implemented.
+
+struct PictVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case scheduleUpdate = "scheduleupdate"
+		case expressions = "expression"
+		case getPicture = "getpicture"
+		case setPicture = "setpicture"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
 		
-		guard let verb = Verb(rawValue: lowerVerbName) else {
+		guard let _ = Verb(rawValue: lowerVerbName) else {
 			return VerbResult.verbNotFound
 		}
 		
-		switch verb {
-			
-		case .x:
-			return x(params)
-		}
+		return VerbResult.noLongerImplemented
 	}
-}
-
-private extension TargetVerbs {
-	
-	static func x(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
-	}
-	
 }

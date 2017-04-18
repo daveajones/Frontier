@@ -8,9 +8,31 @@
 
 import Foundation
 
-final class HTMLVerbs: NSObject, VerbTable {
+struct HTMLVerbs: VerbTable {
 	
-	static let tableName = "html"
-	static let supportedVerbs = [String]()
+	private enum Verb: String {
+		case x = "x"
+	}
+	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .x:
+			return x(params)
+		}
+	}
+}
+
+private extension HTMLVerbs {
+	
+	static func x(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
 	
 }

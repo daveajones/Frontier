@@ -1,5 +1,5 @@
 //
-//  StatusBarVerbs.swift
+//  OSAVerbs.swift
 //  FrontierVerbs
 //
 //  Created by Brent Simmons on 4/15/17.
@@ -9,16 +9,16 @@
 import Foundation
 
 // No longer implemented.
-// These were Windows-only.
+// Wish list: implement verbs using SearchKit for creating and searching indexes.
 
-struct StatusBarVerbs: VerbTable {
+struct SearchEngineVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case msg = "msg"
-		case setSections = "setsections"
-		case getSections = "getsections"
-		case getSectionOne = "getsectionone"
-		case getMessage = "getmessage"
+		case stripMarkup = "stripmarkup"
+		case deIndexPage = "deindexpage"
+		case indexPage = "indexpage"
+		case cleanIndex = "cleanindex"
+		case mergeResults = "mergeresults"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {

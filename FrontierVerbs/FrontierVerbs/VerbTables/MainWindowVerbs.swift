@@ -8,9 +8,31 @@
 
 import Foundation
 
-final class MainWindowVerbs: NSObject, VerbTable {
+struct MainWindowVerbs: VerbTable {
 	
-	static let tableName = "mainwindow"
-	static let supportedVerbs = [String]()
+	private enum Verb: String {
+		case x = "x"
+	}
+	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .x:
+			return x(params)
+		}
+	}
+}
+
+private extension MainWindowVerbs {
+	
+	static func x(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
 	
 }

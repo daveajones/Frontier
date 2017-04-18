@@ -2,28 +2,37 @@
 
 This framework implements Frontier’s standard verbs, such as clock.now and file.open, which live in system.verbs.builtins.
 
-Adding verb tables and verbs is designed to be easy. (It was kind of a pain in Old Frontier.)
-
 ## How to add a new verb table
 
-Create a new AnyNameVerbs class in the Builtins folder.
+Create a new AnyNameVerbs struct in the Verb Tables folder.
 
 The “AnyName” part should match the name of the corresponding table in Frontier. (With one difference: the first letter must be capitalized, since object names are capitalized in Cocoa.)
 
-The class must conform to the VerbTable protocol: it should return 1) its table name (should be lowercase) and 2) an array of supported verbs.
+The class must conform to the `VerbTable` protocol. The easy way to get started: copy from an existing verb table.
 
-Last thing: add the table to VerbRunner.verbTables. (This way VerbRunner can see your table.)
+Last thing: add to `VerbRunner.VerbImplementors` and add a case to the switch statement in the `run` function.
+
+You’ll also have to add a corresponding table to the database, but that’s a whole separate thing.
 
 ## How to add a new verb
 
 We’ll use FileVerbs as an example, but the process is the same for all of the verb tables.
 
-1. Add the canonical name of the verb to FileVerbs.supportedVerbs. (At the end is fine: order doesn’t matter.)
+1. Add the verb to `FileVerbs.Verbs` enum. Its value must be all lowercase.
 
-2. Add a dynamic function that has the name of the verb as it appears in FileVerbs.supportedVerbs. It must have the exact same capitalization. (Even though capitalization doesn’t matter in Frontier scripts, it matters here.) That function takes VerbParameters and returns a VerbResult.
+2. Add to the switch statement in the `evaluate` function.
 
-That’s it. Well, you have to actually implement the function. And add a corresponding object to the database. But you’ve done the kernel housekeeping bits.
+3. Add the actual implementation as a function in `private extension FileVerbs`.
+
+You also have to add a corresponding object to the database. But you’ve done the kernel housekeeping bits.
 
 ## Stubs
 
 At this writing, VerbParameters, Parameter, and VerbResult are all just temporary. Once UserTalk.framework is filled, we’ll switch to using types defined in the language.
+
+## Not-Implemented and No-Longer-Implemented
+
+Any verb not *yet* implemented, but that will be, should return `VerbResult.notImplemented`.
+
+Any verb that was implemented in a previous version of Frontier, but longer makes sense for whatever reason, should return `VerbResult.NoLongerImplemented`. (Example: `RezVerbs`.)
+

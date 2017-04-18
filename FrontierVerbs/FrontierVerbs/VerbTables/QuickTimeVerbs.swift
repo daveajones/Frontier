@@ -1,5 +1,5 @@
 //
-//  StatusBarVerbs.swift
+//  PointVerbs.swift
 //  FrontierVerbs
 //
 //  Created by Brent Simmons on 4/15/17.
@@ -9,16 +9,16 @@
 import Foundation
 
 // No longer implemented.
-// These were Windows-only.
+// QuickTime is deprecated.
+// Wish list: a rich set of media scripting verbs.
 
-struct StatusBarVerbs: VerbTable {
+struct QuickTimeVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case msg = "msg"
-		case setSections = "setsections"
-		case getSections = "getsections"
-		case getSectionOne = "getsectionone"
-		case getMessage = "getmessage"
+		case open = "open"
+		case play = "play"
+		case stop = "stop"
+		case isPlaying = "isplaying"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {

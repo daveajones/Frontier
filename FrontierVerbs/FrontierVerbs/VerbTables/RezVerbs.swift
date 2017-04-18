@@ -1,5 +1,5 @@
 //
-//  TargetVerbs.swift
+//  OSAVerbs.swift
 //  FrontierVerbs
 //
 //  Created by Brent Simmons on 4/15/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TargetVerbs: VerbTable {
+struct RegexVerbs: VerbTable {
 	
 	private enum Verb: String {
 		case x = "x"
@@ -28,7 +28,7 @@ struct TargetVerbs: VerbTable {
 	}
 }
 
-private extension TargetVerbs {
+private extension RegexVerbs {
 	
 	static func x(_ params: VerbParams) -> VerbResult {
 		

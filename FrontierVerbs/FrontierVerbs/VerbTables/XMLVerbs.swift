@@ -8,9 +8,31 @@
 
 import Foundation
 
-final class XMLVerbs: NSObject, VerbTable {
+struct XMLVerbs: VerbTable {
 	
-	static let tableName = "xml"
-	static let supportedVerbs = [String]()
+	private enum Verb: String {
+		case x = "x"
+	}
+	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .x:
+			return x(params)
+		}
+	}
+}
+
+private extension XMLVerbs {
+	
+	static func x(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
 	
 }

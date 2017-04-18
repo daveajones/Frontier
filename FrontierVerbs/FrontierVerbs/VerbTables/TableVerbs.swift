@@ -8,9 +8,31 @@
 
 import Foundation
 
-final class TableVerbs: NSObject, VerbTable {
+struct TableVerbs: VerbTable {
 	
-	static let tableName = "table"
-	static let supportedVerbs = [String]()
+	private enum Verb: String {
+		case x = "x"
+	}
+	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .x:
+			return x(params)
+		}
+	}
+}
+
+private extension TableVerbs {
+	
+	static func x(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
 	
 }

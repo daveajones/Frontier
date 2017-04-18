@@ -8,9 +8,31 @@
 
 import Foundation
 
-final class OSAVerbs: NSObject, VerbTable {
+struct OSAVerbs: VerbTable {
 	
-	static let tableName = "osa"
-	static let supportedVerbs = [String]()
+	private enum Verb: String {
+		case x = "x"
+	}
+	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .x:
+			return x(params)
+		}
+	}
+}
+
+private extension OSAVerbs {
+	
+	static func x(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
 	
 }

@@ -8,14 +8,16 @@
 
 import Cocoa
 
-final class VerbParameters: NSObject {
+struct VerbParams {
 
-	let ordered: [Parameter]
-	let named: [String: Parameter]
+	let ordered: [Param]
+	let named: [String: Param]
+	let count: Int
 	
-	init(ordered: [Parameter], named: [String: Parameter]) {
+	init(ordered: [Param], named: [String: Param]) {
 		
 		self.ordered = ordered
 		self.named = named
+		self.count = ordered.count
 	}
 }

@@ -8,13 +8,39 @@
 
 import Foundation
 
-final class VerbResult: NSObject {
+enum VerbError: Error {
+	case verbNotFound
+	case tooManyParams
+	case tooFewParams
+	case notImplemented
+	case noLongerImplemented
+}
 
-	static let empty = VerbResult(error: nil)
+struct VerbResult {
+
+	static let empty = VerbResult(value: nil, error: nil)
+	static let verbNotFound = VerbResult(error: .verbNotFound)
+	static let tooManyParams = VerbResult(error: .tooManyParams)
+	static let tooFewParams = VerbResult(error: .tooFewParams)
+	static let notImplemented = VerbResult(error: .notImplemented)
+	static let noLongerImplemented = VerbResult(error: .noLongerImplemented)
+	
+	let value: Any?
 	let error: Error?
 	
-	init(error: Error?) {
+	init(value: Any) {
 		
+		self.init(value: value, error: nil)
+	}
+
+	init(error: VerbError) {
+		
+		self.init(value: nil, error: error)
+	}
+	
+	init(value: Any?, error: VerbError?) {
+		
+		self.value = value
 		self.error = error
 	}
 }

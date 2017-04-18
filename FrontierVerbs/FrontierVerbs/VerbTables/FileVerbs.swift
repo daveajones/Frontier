@@ -7,18 +7,31 @@
 
 import Cocoa
 
-final class FileVerbs: NSObject, VerbTable {
+struct FileVerbs: VerbTable {
+	
+	private enum Verb: String {
+		case x = "x"
+	}
+	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .x:
+			return x(params)
+		}
+	}
+}
 
-	static let tableName = "file"
-	static let supportedVerbs = ["getPathChar", "readWholeFile"]
+private extension FileVerbs {
 	
-	dynamic func readWholeFile(_ params: VerbParameters) -> VerbResult {
+	static func x(_ params: VerbParams) -> VerbResult {
 		
-		return VerbResult.empty
+		return VerbResult.notImplemented
 	}
 	
-	dynamic func getPathChar(_ params: VerbParameters) -> VerbResult {
-		
-		return VerbResult.empty
-	}
 }

@@ -1,5 +1,5 @@
 //
-//  Base64Verbs.swift
+//  BitVerbs.swift
 //  FrontierVerbs
 //
 //  Created by Brent Simmons on 4/15/17.
@@ -8,9 +8,42 @@
 
 import Foundation
 
-final class Base64Verbs: NSObject, VerbTable {
-	
-	static let tableName = "base64"
-	static let supportedVerbs = [String]()
 
+struct Base64Verbs: VerbTable {
+	
+	private enum Verb: String {
+		case decode = "decode"
+		case encode = "encode"
+	}
+
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .decode:
+			return decode(params)
+		case .encode:
+			return encode(params)
+		}
+	}
 }
+
+private extension Base64Verbs {
+	
+	static func decode(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+
+	static func encode(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+}
+
+
+

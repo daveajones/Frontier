@@ -8,9 +8,7 @@
 
 import Foundation
 
-@objc protocol VerbTable {
+protocol VerbTable {
 	
-	static var tableName: String {get}
-	static var supportedVerbs: [String] {get}
-	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult
 }

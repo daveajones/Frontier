@@ -8,9 +8,90 @@
 
 import Foundation
 
-final class BitVerbs: NSObject, VerbTable {
+
+struct BitVerbs: VerbTable {
 	
-	static let tableName = "bit"
-	static let supportedVerbs = [String]()
-	
+	private enum Verb: String {
+		case clear = "clear"
+		case get = "get"
+		case logicalAnd = "logicaland"
+		case logicalOr = "logicalor"
+		case logicalXor = "logicalxor"
+		case set = "set"
+		case shiftLeft = "shiftleft"
+		case shiftRight = "shiftright"
+	}
+
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+		
+		guard let verb = Verb(rawValue: lowerVerbName) else {
+			return VerbResult.verbNotFound
+		}
+		
+		switch verb {
+			
+		case .clear:
+			return clear(params)
+		case .get:
+			return get(params)
+		case .logicalAnd:
+			return logicalAnd(params)
+		case .logicalOr:
+			return logicalOr(params)
+		case .logicalXor:
+			return logicalXor(params)
+		case .set:
+			return set(params)
+		case .shiftLeft:
+			return shiftLeft(params)
+		case .shiftRight:
+			return shiftRight(params)
+		}
+	}
 }
+
+private extension BitVerbs {
+	
+	static func clear(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+
+	static func get(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+
+	static func logicalAnd(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func logicalOr(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func logicalXor(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func set(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func shiftLeft(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func shiftRight(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+}
+
+
+
