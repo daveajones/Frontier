@@ -11,7 +11,10 @@ import Foundation
 struct KBVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case optionKey = "optionkey"
+		case cmdKey = "cmdkey"
+		case shiftKey = "shiftkey"
+		case controlKey = "controlkey"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,15 +25,36 @@ struct KBVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .optionKey:
+			return isOptionKeyDown(params)
+		case .cmdKey:
+			return isCmdKeyDown(params)
+		case .shiftKey:
+			return isShiftKeyDown(params)
+		case .controlKey:
+			return isControlKeyDown(params)
 		}
 	}
 }
 
 private extension KBVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func isOptionKeyDown(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func isCmdKeyDown(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func isShiftKeyDown(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func isControlKeyDown(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
