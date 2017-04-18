@@ -11,7 +11,11 @@ import Foundation
 struct OPAttributesVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case addGroup = "addgroup"
+		case getAll = "getall"
+		case getOne = "getone"
+		case makeEmpty = "makeempty"
+		case setOne = "setone"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
@@ -22,15 +26,43 @@ struct OPAttributesVerbs: VerbTable {
 		
 		switch verb {
 			
-		case .x:
-			return x(params)
+		case .addGroup:
+			return addGroup(params)
+		case .getAll:
+			return getAll(params)
+		case .getOne:
+			return getOne(params)
+		case .makeEmpty:
+			return makeEmpty(params)
+		case .setOne:
+			return setOne(params)
 		}
 	}
 }
 
 private extension OPAttributesVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func addGroup(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func getAll(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func getOne(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func makeEmpty(_ params: VerbParams) -> VerbResult {
+		
+		return VerbResult.notImplemented
+	}
+	
+	static func setOne(_ params: VerbParams) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
