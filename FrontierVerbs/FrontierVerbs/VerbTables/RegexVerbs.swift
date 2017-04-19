@@ -31,7 +31,7 @@ struct RezVerbs: VerbTable {
 		case setResourceAttributes = "setresourceattributes"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
 		
 		guard let _ = Verb(rawValue: lowerVerbName) else {
 			return VerbResult.verbNotFound

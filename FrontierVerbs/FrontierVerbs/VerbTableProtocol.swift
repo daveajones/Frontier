@@ -10,5 +10,5 @@ import Foundation
 
 protocol VerbTable {
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams) -> VerbResult
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult
 }

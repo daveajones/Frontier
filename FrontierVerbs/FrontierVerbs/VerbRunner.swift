@@ -10,6 +10,12 @@ import Foundation
 
 struct VerbRunner {
 	
+	private let verbAppDelegate: VerbAppDelegate
+	
+	init(verbAppDelegate: VerbAppDelegate) {
+		self.verbAppDelegate = verbAppDelegate
+	}
+	
 	private enum VerbImplementor: String {
 		case base64 = "base64"
 		case bit = "bit"
@@ -62,9 +68,6 @@ struct VerbRunner {
 		case xml = "xml"
 	}
 	
-	
-	fileprivate let langVerbTable = LangVerbs()
-	
 	func run(verbName: String, params: VerbParams) -> VerbResult {
 		
 		let (lowerTableName, lowerVerbName) = verbNamePieces(verbName)
@@ -76,103 +79,103 @@ struct VerbRunner {
 		switch implementor {
 			
 		case .base64:
-			return Base64Verbs.evaluate(lowerVerbName, params)
+			return Base64Verbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .bit:
-			return BitVerbs.evaluate(lowerVerbName, params)
+			return BitVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .clipboard:
-			return ClipboardVerbs.evaluate(lowerVerbName, params)
+			return ClipboardVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .clock:
-			return ClockVerbs.evaluate(lowerVerbName, params)
+			return ClockVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .crypt:
-			return CryptVerbs.evaluate(lowerVerbName, params)
+			return CryptVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .date:
-			return DateVerbs.evaluate(lowerVerbName, params)
+			return DateVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .db:
-			return DBVerbs.evaluate(lowerVerbName, params)
+			return DBVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .dll:
-			return DLLVerbs.evaluate(lowerVerbName, params)
+			return DLLVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .dialog:
-			return DialogVerbs.evaluate(lowerVerbName, params)
+			return DialogVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .editMenu:
-			return EditMenuVerbs.evaluate(lowerVerbName, params)
+			return EditMenuVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .fileMenu:
-			return FileMenuVerbs.evaluate(lowerVerbName, params)
+			return FileMenuVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .file:
-			return FileVerbs.evaluate(lowerVerbName, params)
+			return FileVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .frontier:
-			return FrontierVerbs.evaluate(lowerVerbName, params)
+			return FrontierVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .html:
-			return HTMLVerbs.evaluate(lowerVerbName, params)
+			return HTMLVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .inetd:
-			return InetdVerbs.evaluate(lowerVerbName, params)
+			return InetdVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .kb:
-			return KBVerbs.evaluate(lowerVerbName, params)
+			return KBVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .launch:
-			return LaunchVerbs.evaluate(lowerVerbName, params)
+			return LaunchVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .lang:
-			return LangVerbs.evaluate(lowerVerbName, params)
+			return LangVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .mainWindow:
-			return MainWindowVerbs.evaluate(lowerVerbName, params)
+			return MainWindowVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .math:
-			return MathVerbs.evaluate(lowerVerbName, params)
+			return MathVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .menu:
-			return MenuVerbs.evaluate(lowerVerbName, params)
+			return MenuVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .mouse:
-			return MouseVerbs.evaluate(lowerVerbName, params)
+			return MouseVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .mrCalendar:
-			return MRCalendarVerbs.evaluate(lowerVerbName, params)
+			return MRCalendarVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .opAttributes:
-			return OPAttributesVerbs.evaluate(lowerVerbName, params)
+			return OPAttributesVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .op:
-			return OPVerbs.evaluate(lowerVerbName, params)
+			return OPVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .osa:
-			return OSAVerbs.evaluate(lowerVerbName, params)
+			return OSAVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .pict:
-			return PictVerbs.evaluate(lowerVerbName, params)
+			return PictVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .point:
-			return PointVerbs.evaluate(lowerVerbName, params)
+			return PointVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .quickTime:
-			return QuickTimeVerbs.evaluate(lowerVerbName, params)
+			return QuickTimeVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .rgb:
-			return RGBVerbs.evaluate(lowerVerbName, params)
+			return RGBVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .re:
-			return RegexVerbs.evaluate(lowerVerbName, params)
+			return RegexVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .rez:
-			return RezVerbs.evaluate(lowerVerbName, params)
+			return RezVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .rectangle:
-			return RectangleVerbs.evaluate(lowerVerbName, params)
+			return RectangleVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .script:
-			return ScriptVerbs.evaluate(lowerVerbName, params)
+			return ScriptVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .search:
-			return SearchVerbs.evaluate(lowerVerbName, params)
+			return SearchVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .searchEngine:
-			return SearchEngineVerbs.evaluate(lowerVerbName, params)
+			return SearchEngineVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .semaphore:
-			return SemaphoreVerbs.evaluate(lowerVerbName, params)
+			return SemaphoreVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .speaker:
-			return SpeakerVerbs.evaluate(lowerVerbName, params)
+			return SpeakerVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .statusBar:
-			return StatusBarVerbs.evaluate(lowerVerbName, params)
+			return StatusBarVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .string:
-			return StringVerbs.evaluate(lowerVerbName, params)
+			return StringVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .sys:
-			return SysVerbs.evaluate(lowerVerbName, params)
+			return SysVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .table:
-			return TableVerbs.evaluate(lowerVerbName, params)
+			return TableVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .target:
-			return TargetVerbs.evaluate(lowerVerbName, params)
+			return TargetVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .tcp:
-			return TCPVerbs.evaluate(lowerVerbName, params)
+			return TCPVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .thread:
-			return ThreadVerbs.evaluate(lowerVerbName, params)
+			return ThreadVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .webserver:
-			return WebserverVerbs.evaluate(lowerVerbName, params)
+			return WebserverVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .window:
-			return WindowVerbs.evaluate(lowerVerbName, params)
+			return WindowVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .wp:
-			return WPVerbs.evaluate(lowerVerbName, params)
+			return WPVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		case .xml:
-			return XMLVerbs.evaluate(lowerVerbName, params)
+			return XMLVerbs.evaluate(lowerVerbName, params, verbAppDelegate)
 		}
 	}
 }
