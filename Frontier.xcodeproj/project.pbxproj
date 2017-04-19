@@ -21,7 +21,8 @@
 		84B50C391EA704E700C7D1A3 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50C381EA704E700C7D1A3 /* MainWindowController.swift */; };
 		84B50C3B1EA7062700C7D1A3 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50C3A1EA7062700C7D1A3 /* MainWindow.swift */; };
 		84ECA7831E9D733F00CB76EC /* DBBrowserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ECA7821E9D733F00CB76EC /* DBBrowserWindow.xib */; };
-		84ECA7851E9D738A00CB76EC /* ScriptWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ECA7841E9D738A00CB76EC /* ScriptWindow.xib */; };
+		84EEF8381EA7FC6D0061A312 /* ShellWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8371EA7FC6D0061A312 /* ShellWindow.xib */; };
+		84EEF8401EA7FD500061A312 /* ShellWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF83F1EA7FD500061A312 /* ShellWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,9 +143,10 @@
 		84B50C381EA704E700C7D1A3 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = Frontier/MainWindowController.swift; sourceTree = "<group>"; };
 		84B50C3A1EA7062700C7D1A3 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindow.swift; path = Frontier/MainWindow.swift; sourceTree = "<group>"; };
 		84ECA7821E9D733F00CB76EC /* DBBrowserWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DBBrowserWindow.xib; path = Frontier/xibs/DBBrowserWindow.xib; sourceTree = "<group>"; };
-		84ECA7841E9D738A00CB76EC /* ScriptWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScriptWindow.xib; path = Frontier/xibs/ScriptWindow.xib; sourceTree = "<group>"; };
 		84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierCore.xcodeproj; path = FrontierCore/FrontierCore.xcodeproj; sourceTree = "<group>"; };
 		84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierVerbs.xcodeproj; path = FrontierVerbs/FrontierVerbs.xcodeproj; sourceTree = "<group>"; };
+		84EEF8371EA7FC6D0061A312 /* ShellWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShellWindow.xib; path = Frontier/xibs/ShellWindow.xib; sourceTree = "<group>"; };
+		84EEF83F1EA7FD500061A312 /* ShellWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShellWindowController.swift; path = Frontier/ShellWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +176,9 @@
 				8461885E1E9D707A00A56F84 /* Assets.xcassets */,
 				846188601E9D707A00A56F84 /* Main.storyboard */,
 				84ECA7821E9D733F00CB76EC /* DBBrowserWindow.xib */,
-				84ECA7841E9D738A00CB76EC /* ScriptWindow.xib */,
+				84EEF8371EA7FC6D0061A312 /* ShellWindow.xib */,
 				8461885A1E9D707A00A56F84 /* AppDelegate.swift */,
+				84EEF8411EA7FD670061A312 /* ShellWindow */,
 				84B50C3C1EA7069500C7D1A3 /* MainWindow */,
 				846188631E9D707A00A56F84 /* Info.plist */,
 				8461886B1E9D707A00A56F84 /* FrontierTests */,
@@ -249,6 +252,14 @@
 				84ECA7E81E9EC20A00CB76EC /* FrontierVerbsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		84EEF8411EA7FD670061A312 /* ShellWindow */ = {
+			isa = PBXGroup;
+			children = (
+				84EEF83F1EA7FD500061A312 /* ShellWindowController.swift */,
+			);
+			name = ShellWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,9 +428,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EEF8381EA7FC6D0061A312 /* ShellWindow.xib in Resources */,
 				8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */,
 				846188621E9D707A00A56F84 /* Main.storyboard in Resources */,
-				84ECA7851E9D738A00CB76EC /* ScriptWindow.xib in Resources */,
 				84ECA7831E9D733F00CB76EC /* DBBrowserWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +452,7 @@
 				84B50C3B1EA7062700C7D1A3 /* MainWindow.swift in Sources */,
 				8461885D1E9D707A00A56F84 /* MainWindowViewController.swift in Sources */,
 				8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */,
+				84EEF8401EA7FD500061A312 /* ShellWindowController.swift in Sources */,
 				84B50C391EA704E700C7D1A3 /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
