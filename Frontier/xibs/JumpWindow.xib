@@ -38,7 +38,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEo-PT-vqR">
-                        <rect key="frame" x="418" y="64" width="54" height="17"/>
+                        <rect key="frame" x="26" y="64" width="54" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="justified" title="Recent:" id="AXQ-4H-Q8m">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -86,6 +86,7 @@ Gw
                     <constraint firstAttribute="trailing" secondItem="MoA-V5-xNv" secondAttribute="trailing" constant="20" symbolic="YES" id="GEr-ww-rBw"/>
                     <constraint firstAttribute="trailing" secondItem="b5m-ix-w4M" secondAttribute="trailing" constant="20" symbolic="YES" id="QXf-HA-bFx"/>
                     <constraint firstItem="IDv-Mj-YMY" firstAttribute="bottom" secondItem="MoA-V5-xNv" secondAttribute="bottom" id="dsa-Zf-VmW"/>
+                    <constraint firstItem="GEo-PT-vqR" firstAttribute="trailing" secondItem="4je-ll-nFs" secondAttribute="trailing" id="eqH-pw-I2l"/>
                     <constraint firstItem="MoA-V5-xNv" firstAttribute="leading" secondItem="IDv-Mj-YMY" secondAttribute="trailing" constant="12" symbolic="YES" id="fXH-NC-OXK"/>
                     <constraint firstItem="4je-ll-nFs" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="geP-yF-n9M"/>
                     <constraint firstItem="MoA-V5-xNv" firstAttribute="top" secondItem="eD2-hX-Jxh" secondAttribute="bottom" constant="20" symbolic="YES" id="iTI-yI-9zr"/>
@@ -95,7 +96,6 @@ Gw
                     <constraint firstItem="MoA-V5-xNv" firstAttribute="width" secondItem="IDv-Mj-YMY" secondAttribute="width" id="nSJ-VF-LNG"/>
                     <constraint firstAttribute="bottom" secondItem="MoA-V5-xNv" secondAttribute="bottom" constant="20" symbolic="YES" id="sBK-Eq-hOf"/>
                     <constraint firstItem="4je-ll-nFs" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="vsc-4u-xsD"/>
-                    <constraint firstItem="b5m-ix-w4M" firstAttribute="trailing" secondItem="GEo-PT-vqR" secondAttribute="trailing" id="zHg-AI-kUd"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="144" y="98"/>
