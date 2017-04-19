@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461885A1E9D707A00A56F84 /* AppDelegate.swift */; };
-		8461885D1E9D707A00A56F84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461885C1E9D707A00A56F84 /* ViewController.swift */; };
+		8461885D1E9D707A00A56F84 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461885C1E9D707A00A56F84 /* MainWindowViewController.swift */; };
 		8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8461885E1E9D707A00A56F84 /* Assets.xcassets */; };
 		846188621E9D707A00A56F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846188601E9D707A00A56F84 /* Main.storyboard */; };
 		8461886D1E9D707A00A56F84 /* FrontierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461886C1E9D707A00A56F84 /* FrontierTests.swift */; };
@@ -18,6 +18,8 @@
 		849023D41E9EC258002D1BA7 /* FrontierVerbs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7E61E9EC20A00CB76EC /* FrontierVerbs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8490240A1E9EC422002D1BA7 /* UserTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849024071E9EC3D9002D1BA7 /* UserTalk.framework */; };
 		8490240B1E9EC422002D1BA7 /* UserTalk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 849024071E9EC3D9002D1BA7 /* UserTalk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84B50C391EA704E700C7D1A3 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50C381EA704E700C7D1A3 /* MainWindowController.swift */; };
+		84B50C3B1EA7062700C7D1A3 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50C3A1EA7062700C7D1A3 /* MainWindow.swift */; };
 		84ECA7831E9D733F00CB76EC /* DBBrowserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ECA7821E9D733F00CB76EC /* DBBrowserWindow.xib */; };
 		84ECA7851E9D738A00CB76EC /* ScriptWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ECA7841E9D738A00CB76EC /* ScriptWindow.xib */; };
 /* End PBXBuildFile section */
@@ -127,18 +129,20 @@
 
 /* Begin PBXFileReference section */
 		846188571E9D707A00A56F84 /* Frontier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontier.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8461885A1E9D707A00A56F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8461885C1E9D707A00A56F84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8461885E1E9D707A00A56F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8461885A1E9D707A00A56F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Frontier/AppDelegate.swift; sourceTree = "<group>"; };
+		8461885C1E9D707A00A56F84 /* MainWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainWindowViewController.swift; path = Frontier/MainWindowViewController.swift; sourceTree = "<group>"; };
+		8461885E1E9D707A00A56F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Frontier/Assets.xcassets; sourceTree = "<group>"; };
 		846188611E9D707A00A56F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		846188631E9D707A00A56F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846188631E9D707A00A56F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Frontier/Info.plist; sourceTree = "<group>"; };
 		846188681E9D707A00A56F84 /* FrontierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrontierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461886C1E9D707A00A56F84 /* FrontierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontierTests.swift; sourceTree = "<group>"; };
 		8461886E1E9D707A00A56F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserTalk.xcodeproj; path = UserTalk/UserTalk.xcodeproj; sourceTree = "<group>"; };
 		849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierDB.xcodeproj; path = FrontierDB/FrontierDB.xcodeproj; sourceTree = "<group>"; };
-		84ECA7821E9D733F00CB76EC /* DBBrowserWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DBBrowserWindow.xib; path = xibs/DBBrowserWindow.xib; sourceTree = "<group>"; };
-		84ECA7841E9D738A00CB76EC /* ScriptWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScriptWindow.xib; path = xibs/ScriptWindow.xib; sourceTree = "<group>"; };
+		84B50C381EA704E700C7D1A3 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = Frontier/MainWindowController.swift; sourceTree = "<group>"; };
+		84B50C3A1EA7062700C7D1A3 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindow.swift; path = Frontier/MainWindow.swift; sourceTree = "<group>"; };
+		84ECA7821E9D733F00CB76EC /* DBBrowserWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DBBrowserWindow.xib; path = Frontier/xibs/DBBrowserWindow.xib; sourceTree = "<group>"; };
+		84ECA7841E9D738A00CB76EC /* ScriptWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScriptWindow.xib; path = Frontier/xibs/ScriptWindow.xib; sourceTree = "<group>"; };
 		84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierCore.xcodeproj; path = FrontierCore/FrontierCore.xcodeproj; sourceTree = "<group>"; };
 		84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierVerbs.xcodeproj; path = FrontierVerbs/FrontierVerbs.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,7 +171,13 @@
 		8461884E1E9D707A00A56F84 = {
 			isa = PBXGroup;
 			children = (
-				846188591E9D707A00A56F84 /* Frontier */,
+				8461885E1E9D707A00A56F84 /* Assets.xcassets */,
+				846188601E9D707A00A56F84 /* Main.storyboard */,
+				84ECA7821E9D733F00CB76EC /* DBBrowserWindow.xib */,
+				84ECA7841E9D738A00CB76EC /* ScriptWindow.xib */,
+				8461885A1E9D707A00A56F84 /* AppDelegate.swift */,
+				84B50C3C1EA7069500C7D1A3 /* MainWindow */,
+				846188631E9D707A00A56F84 /* Info.plist */,
 				8461886B1E9D707A00A56F84 /* FrontierTests */,
 				846188581E9D707A00A56F84 /* Products */,
 				84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */,
@@ -184,20 +194,6 @@
 				846188681E9D707A00A56F84 /* FrontierTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		846188591E9D707A00A56F84 /* Frontier */ = {
-			isa = PBXGroup;
-			children = (
-				8461885A1E9D707A00A56F84 /* AppDelegate.swift */,
-				8461885C1E9D707A00A56F84 /* ViewController.swift */,
-				8461885E1E9D707A00A56F84 /* Assets.xcassets */,
-				846188601E9D707A00A56F84 /* Main.storyboard */,
-				84ECA7821E9D733F00CB76EC /* DBBrowserWindow.xib */,
-				84ECA7841E9D738A00CB76EC /* ScriptWindow.xib */,
-				846188631E9D707A00A56F84 /* Info.plist */,
-			);
-			path = Frontier;
 			sourceTree = "<group>";
 		};
 		8461886B1E9D707A00A56F84 /* FrontierTests */ = {
@@ -225,6 +221,16 @@
 				8490243A1E9EC44F002D1BA7 /* FrontierDBTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		84B50C3C1EA7069500C7D1A3 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				84B50C381EA704E700C7D1A3 /* MainWindowController.swift */,
+				8461885C1E9D707A00A56F84 /* MainWindowViewController.swift */,
+				84B50C3A1EA7062700C7D1A3 /* MainWindow.swift */,
+			);
+			name = MainWindow;
 			sourceTree = "<group>";
 		};
 		84ECA7AB1E9DC21000CB76EC /* Products */ = {
@@ -432,8 +438,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8461885D1E9D707A00A56F84 /* ViewController.swift in Sources */,
+				84B50C3B1EA7062700C7D1A3 /* MainWindow.swift in Sources */,
+				8461885D1E9D707A00A56F84 /* MainWindowViewController.swift in Sources */,
 				8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */,
+				84B50C391EA704E700C7D1A3 /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +485,7 @@
 				846188611E9D707A00A56F84 /* Base */,
 			);
 			name = Main.storyboard;
+			path = Frontier;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
