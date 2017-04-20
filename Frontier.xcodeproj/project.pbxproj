@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461885A1E9D707A00A56F84 /* AppDelegate.swift */; };
-		8461885D1E9D707A00A56F84 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461885C1E9D707A00A56F84 /* MainWindowViewController.swift */; };
 		8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8461885E1E9D707A00A56F84 /* Assets.xcassets */; };
 		846188621E9D707A00A56F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846188601E9D707A00A56F84 /* Main.storyboard */; };
 		8461886D1E9D707A00A56F84 /* FrontierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461886C1E9D707A00A56F84 /* FrontierTests.swift */; };
@@ -18,12 +17,16 @@
 		849023D41E9EC258002D1BA7 /* FrontierVerbs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7E61E9EC20A00CB76EC /* FrontierVerbs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8490240A1E9EC422002D1BA7 /* UserTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849024071E9EC3D9002D1BA7 /* UserTalk.framework */; };
 		8490240B1E9EC422002D1BA7 /* UserTalk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 849024071E9EC3D9002D1BA7 /* UserTalk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		84B50C391EA704E700C7D1A3 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50C381EA704E700C7D1A3 /* MainWindowController.swift */; };
-		84B50C3B1EA7062700C7D1A3 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50C3A1EA7062700C7D1A3 /* MainWindow.swift */; };
-		84EEF8381EA7FC6D0061A312 /* ShellWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8371EA7FC6D0061A312 /* ShellWindow.xib */; };
-		84EEF8401EA7FD500061A312 /* ShellWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF83F1EA7FD500061A312 /* ShellWindowController.swift */; };
-		84EEF8431EA7FDDC0061A312 /* JumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8421EA7FDDC0061A312 /* JumpWindow.xib */; };
 		84EEF8451EA7FFDA0061A312 /* JumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8441EA7FFDA0061A312 /* JumpWindowController.swift */; };
+		84EEF8481EA84F8F0061A312 /* ScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8471EA84F8F0061A312 /* ScriptViewController.swift */; };
+		84EEF84B1EA84FB70061A312 /* OPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF84A1EA84FB70061A312 /* OPViewController.swift */; };
+		84EEF84E1EA84FE20061A312 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF84D1EA84FE20061A312 /* WPViewController.swift */; };
+		84EEF8531EA8502B0061A312 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8501EA8502B0061A312 /* MainWindow.swift */; };
+		84EEF8541EA8502B0061A312 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8511EA8502B0061A312 /* MainWindowController.swift */; };
+		84EEF8551EA8502B0061A312 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8521EA8502B0061A312 /* MainWindowViewController.swift */; };
+		84EEF8571EA8504C0061A312 /* ShellWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8561EA8504C0061A312 /* ShellWindowController.swift */; };
+		84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8581EA850700061A312 /* ShellWindow.xib */; };
+		84EEF85B1EA850830061A312 /* JumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF85A1EA850830061A312 /* JumpWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +135,6 @@
 /* Begin PBXFileReference section */
 		846188571E9D707A00A56F84 /* Frontier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461885A1E9D707A00A56F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Frontier/AppDelegate.swift; sourceTree = "<group>"; };
-		8461885C1E9D707A00A56F84 /* MainWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainWindowViewController.swift; path = Frontier/MainWindowViewController.swift; sourceTree = "<group>"; };
 		8461885E1E9D707A00A56F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Frontier/Assets.xcassets; sourceTree = "<group>"; };
 		846188611E9D707A00A56F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		846188631E9D707A00A56F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Frontier/Info.plist; sourceTree = "<group>"; };
@@ -141,14 +143,18 @@
 		8461886E1E9D707A00A56F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserTalk.xcodeproj; path = UserTalk/UserTalk.xcodeproj; sourceTree = "<group>"; };
 		849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierDB.xcodeproj; path = FrontierDB/FrontierDB.xcodeproj; sourceTree = "<group>"; };
-		84B50C381EA704E700C7D1A3 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = Frontier/MainWindowController.swift; sourceTree = "<group>"; };
-		84B50C3A1EA7062700C7D1A3 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindow.swift; path = Frontier/MainWindow.swift; sourceTree = "<group>"; };
 		84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierCore.xcodeproj; path = FrontierCore/FrontierCore.xcodeproj; sourceTree = "<group>"; };
 		84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierVerbs.xcodeproj; path = FrontierVerbs/FrontierVerbs.xcodeproj; sourceTree = "<group>"; };
-		84EEF8371EA7FC6D0061A312 /* ShellWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShellWindow.xib; path = Frontier/xibs/ShellWindow.xib; sourceTree = "<group>"; };
-		84EEF83F1EA7FD500061A312 /* ShellWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShellWindowController.swift; path = Frontier/ShellWindowController.swift; sourceTree = "<group>"; };
-		84EEF8421EA7FDDC0061A312 /* JumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JumpWindow.xib; path = Frontier/xibs/JumpWindow.xib; sourceTree = "<group>"; };
 		84EEF8441EA7FFDA0061A312 /* JumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JumpWindowController.swift; path = Frontier/JumpWindow/JumpWindowController.swift; sourceTree = "<group>"; };
+		84EEF8471EA84F8F0061A312 /* ScriptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScriptViewController.swift; path = Frontier/Script/ScriptViewController.swift; sourceTree = "<group>"; };
+		84EEF84A1EA84FB70061A312 /* OPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OPViewController.swift; path = Frontier/OP/OPViewController.swift; sourceTree = "<group>"; };
+		84EEF84D1EA84FE20061A312 /* WPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WPViewController.swift; path = Frontier/WP/WPViewController.swift; sourceTree = "<group>"; };
+		84EEF8501EA8502B0061A312 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindow.swift; path = Frontier/MainWindow/MainWindow.swift; sourceTree = "<group>"; };
+		84EEF8511EA8502B0061A312 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = Frontier/MainWindow/MainWindowController.swift; sourceTree = "<group>"; };
+		84EEF8521EA8502B0061A312 /* MainWindowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowViewController.swift; path = Frontier/MainWindow/MainWindowViewController.swift; sourceTree = "<group>"; };
+		84EEF8561EA8504C0061A312 /* ShellWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShellWindowController.swift; path = Frontier/ShellWindow/ShellWindowController.swift; sourceTree = "<group>"; };
+		84EEF8581EA850700061A312 /* ShellWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShellWindow.xib; path = Frontier/ShellWindow/ShellWindow.xib; sourceTree = "<group>"; };
+		84EEF85A1EA850830061A312 /* JumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JumpWindow.xib; path = Frontier/JumpWindow/JumpWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,11 +183,12 @@
 			children = (
 				8461885E1E9D707A00A56F84 /* Assets.xcassets */,
 				846188601E9D707A00A56F84 /* Main.storyboard */,
-				84EEF8371EA7FC6D0061A312 /* ShellWindow.xib */,
-				84EEF8421EA7FDDC0061A312 /* JumpWindow.xib */,
 				8461885A1E9D707A00A56F84 /* AppDelegate.swift */,
-				84EEF8411EA7FD670061A312 /* ShellWindow */,
 				84B50C3C1EA7069500C7D1A3 /* MainWindow */,
+				84EEF8411EA7FD670061A312 /* ShellWindow */,
+				84EEF8491EA84F940061A312 /* Script */,
+				84EEF84C1EA84FBB0061A312 /* OP */,
+				84EEF84F1EA84FE50061A312 /* WP */,
 				84EEF8461EA7FFDE0061A312 /* JumpWindow */,
 				846188631E9D707A00A56F84 /* Info.plist */,
 				8461886B1E9D707A00A56F84 /* FrontierTests */,
@@ -232,9 +239,9 @@
 		84B50C3C1EA7069500C7D1A3 /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
-				84B50C381EA704E700C7D1A3 /* MainWindowController.swift */,
-				8461885C1E9D707A00A56F84 /* MainWindowViewController.swift */,
-				84B50C3A1EA7062700C7D1A3 /* MainWindow.swift */,
+				84EEF8501EA8502B0061A312 /* MainWindow.swift */,
+				84EEF8511EA8502B0061A312 /* MainWindowController.swift */,
+				84EEF8521EA8502B0061A312 /* MainWindowViewController.swift */,
 			);
 			name = MainWindow;
 			sourceTree = "<group>";
@@ -260,7 +267,8 @@
 		84EEF8411EA7FD670061A312 /* ShellWindow */ = {
 			isa = PBXGroup;
 			children = (
-				84EEF83F1EA7FD500061A312 /* ShellWindowController.swift */,
+				84EEF8581EA850700061A312 /* ShellWindow.xib */,
+				84EEF8561EA8504C0061A312 /* ShellWindowController.swift */,
 			);
 			name = ShellWindow;
 			sourceTree = "<group>";
@@ -268,9 +276,34 @@
 		84EEF8461EA7FFDE0061A312 /* JumpWindow */ = {
 			isa = PBXGroup;
 			children = (
+				84EEF85A1EA850830061A312 /* JumpWindow.xib */,
 				84EEF8441EA7FFDA0061A312 /* JumpWindowController.swift */,
 			);
 			name = JumpWindow;
+			sourceTree = "<group>";
+		};
+		84EEF8491EA84F940061A312 /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				84EEF8471EA84F8F0061A312 /* ScriptViewController.swift */,
+			);
+			name = Script;
+			sourceTree = "<group>";
+		};
+		84EEF84C1EA84FBB0061A312 /* OP */ = {
+			isa = PBXGroup;
+			children = (
+				84EEF84A1EA84FB70061A312 /* OPViewController.swift */,
+			);
+			name = OP;
+			sourceTree = "<group>";
+		};
+		84EEF84F1EA84FE50061A312 /* WP */ = {
+			isa = PBXGroup;
+			children = (
+				84EEF84D1EA84FE20061A312 /* WPViewController.swift */,
+			);
+			name = WP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,9 +472,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84EEF8381EA7FC6D0061A312 /* ShellWindow.xib in Resources */,
+				84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */,
 				8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */,
-				84EEF8431EA7FDDC0061A312 /* JumpWindow.xib in Resources */,
+				84EEF85B1EA850830061A312 /* JumpWindow.xib in Resources */,
 				846188621E9D707A00A56F84 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,12 +493,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B50C3B1EA7062700C7D1A3 /* MainWindow.swift in Sources */,
+				84EEF8551EA8502B0061A312 /* MainWindowViewController.swift in Sources */,
 				84EEF8451EA7FFDA0061A312 /* JumpWindowController.swift in Sources */,
-				8461885D1E9D707A00A56F84 /* MainWindowViewController.swift in Sources */,
+				84EEF8531EA8502B0061A312 /* MainWindow.swift in Sources */,
 				8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */,
-				84EEF8401EA7FD500061A312 /* ShellWindowController.swift in Sources */,
-				84B50C391EA704E700C7D1A3 /* MainWindowController.swift in Sources */,
+				84EEF8481EA84F8F0061A312 /* ScriptViewController.swift in Sources */,
+				84EEF8541EA8502B0061A312 /* MainWindowController.swift in Sources */,
+				84EEF84E1EA84FE20061A312 /* WPViewController.swift in Sources */,
+				84EEF8571EA8504C0061A312 /* ShellWindowController.swift in Sources */,
+				84EEF84B1EA84FB70061A312 /* OPViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
