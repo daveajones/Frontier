@@ -11,7 +11,13 @@ import Foundation
 struct MainWindowVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case hideButtons = "hidebuttons"
+		case hideFlag = "hideflag"
+		case hidePopup = "hidepopup"
+		case showButtons = "showbuttons"
+		case showFlag = "showflag"
+		case showPopup = "showpopup"
+		case showServerStats = "showserverstats"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
@@ -20,17 +26,16 @@ struct MainWindowVerbs: VerbTable {
 			return VerbResult.verbNotFound
 		}
 		
-		switch verb {
-			
-		case .x:
-			return x(params)
+		if verb == .showServerStats {
+			return showServerStats(params, verbAppDelegate)
 		}
+		return VerbResult.noLongerImplemented
 	}
 }
 
 private extension MainWindowVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func showServerStats(_ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
 		
 		return VerbResult.notImplemented
 	}
