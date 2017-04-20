@@ -31,6 +31,8 @@
 		84EEF8611EA8540A0061A312 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8601EA8540A0061A312 /* PreferencesWindowController.swift */; };
 		84EEF8641EA855040061A312 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8621EA855040061A312 /* Preferences.storyboard */; };
 		84EEF8661EA86D5C0061A312 /* DefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8651EA86D5C0061A312 /* DefaultsKey.swift */; };
+		84EEF8681EA94D0D0061A312 /* ScriptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8671EA94D0D0061A312 /* ScriptView.xib */; };
+		84EEF86A1EA94FF70061A312 /* OPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8691EA94FF70061A312 /* OPView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,8 @@
 		84EEF8601EA8540A0061A312 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		84EEF8631EA855040061A312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Frontier/Base.lproj/Preferences.storyboard; sourceTree = SOURCE_ROOT; };
 		84EEF8651EA86D5C0061A312 /* DefaultsKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsKey.swift; sourceTree = "<group>"; };
+		84EEF8671EA94D0D0061A312 /* ScriptView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScriptView.xib; path = Frontier/Script/ScriptView.xib; sourceTree = "<group>"; };
+		84EEF8691EA94FF70061A312 /* OPView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OPView.xib; path = Frontier/OP/OPView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +299,7 @@
 		84EEF8491EA84F940061A312 /* Script */ = {
 			isa = PBXGroup;
 			children = (
+				84EEF8671EA94D0D0061A312 /* ScriptView.xib */,
 				84EEF8471EA84F8F0061A312 /* ScriptViewController.swift */,
 			);
 			name = Script;
@@ -303,6 +308,7 @@
 		84EEF84C1EA84FBB0061A312 /* OP */ = {
 			isa = PBXGroup;
 			children = (
+				84EEF8691EA94FF70061A312 /* OPView.xib */,
 				84EEF84A1EA84FB70061A312 /* OPViewController.swift */,
 			);
 			name = OP;
@@ -501,9 +507,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EEF86A1EA94FF70061A312 /* OPView.xib in Resources */,
 				84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */,
 				8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */,
 				84EEF85B1EA850830061A312 /* JumpWindow.xib in Resources */,
+				84EEF8681EA94D0D0061A312 /* ScriptView.xib in Resources */,
 				84EEF8641EA855040061A312 /* Preferences.storyboard in Resources */,
 				846188621E9D707A00A56F84 /* Main.storyboard in Resources */,
 			);
