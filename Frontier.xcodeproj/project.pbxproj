@@ -27,6 +27,7 @@
 		84EEF8571EA8504C0061A312 /* ShellWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8561EA8504C0061A312 /* ShellWindowController.swift */; };
 		84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8581EA850700061A312 /* ShellWindow.xib */; };
 		84EEF85B1EA850830061A312 /* JumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF85A1EA850830061A312 /* JumpWindow.xib */; };
+		84EEF85D1EA8513E0061A312 /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF85C1EA8513E0061A312 /* DBViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		84EEF8561EA8504C0061A312 /* ShellWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShellWindowController.swift; path = Frontier/ShellWindow/ShellWindowController.swift; sourceTree = "<group>"; };
 		84EEF8581EA850700061A312 /* ShellWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShellWindow.xib; path = Frontier/ShellWindow/ShellWindow.xib; sourceTree = "<group>"; };
 		84EEF85A1EA850830061A312 /* JumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JumpWindow.xib; path = Frontier/JumpWindow/JumpWindow.xib; sourceTree = "<group>"; };
+		84EEF85C1EA8513E0061A312 /* DBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBViewController.swift; path = Frontier/DB/DBViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				8461885A1E9D707A00A56F84 /* AppDelegate.swift */,
 				84B50C3C1EA7069500C7D1A3 /* MainWindow */,
 				84EEF8411EA7FD670061A312 /* ShellWindow */,
+				84EEF85E1EA851440061A312 /* DB */,
 				84EEF8491EA84F940061A312 /* Script */,
 				84EEF84C1EA84FBB0061A312 /* OP */,
 				84EEF84F1EA84FE50061A312 /* WP */,
@@ -304,6 +307,14 @@
 				84EEF84D1EA84FE20061A312 /* WPViewController.swift */,
 			);
 			name = WP;
+			sourceTree = "<group>";
+		};
+		84EEF85E1EA851440061A312 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				84EEF85C1EA8513E0061A312 /* DBViewController.swift */,
+			);
+			name = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +512,7 @@
 				84EEF8541EA8502B0061A312 /* MainWindowController.swift in Sources */,
 				84EEF84E1EA84FE20061A312 /* WPViewController.swift in Sources */,
 				84EEF8571EA8504C0061A312 /* ShellWindowController.swift in Sources */,
+				84EEF85D1EA8513E0061A312 /* DBViewController.swift in Sources */,
 				84EEF84B1EA84FB70061A312 /* OPViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
