@@ -1,5 +1,5 @@
 //
-//  OSAVerbs.swift
+//  RezVerbs.swift
 //  FrontierVerbs
 //
 //  Created by Brent Simmons on 4/15/17.
@@ -8,31 +8,35 @@
 
 import Foundation
 
-struct RegexVerbs: VerbTable {
+// No longer implemented.
+// These verbs operated on resource fork items, which isn’t really a thing on OS X.
+
+struct RezVerbs: VerbTable {
 	
 	private enum Verb: String {
-		case x = "x"
+		case getResource = "getresource"
+		case putResource = "putresource"
+		case getNamedResource = "getnamedresource"
+		case putNamedResource = "putnamedresource"
+		case countResTypes = "countrestypes"
+		case getNthResType = "getnthrestype"
+		case countResources = "countresources"
+		case getNthResource = "getnthresource"
+		case getNthResInfo = "getnthresinfo"
+		case resourceExists = "resourceexists"
+		case namedResourceExists = "namedresourceexists"
+		case deleteResource = "deleteResource"
+		case deleteNamedResource = "deleteNamedResource"
+		case getResourceAttributes = "getresourceattributes"
+		case setResourceAttributes = "setresourceattributes"
 	}
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
 		
-		guard let verb = Verb(rawValue: lowerVerbName) else {
+		guard let _ = Verb(rawValue: lowerVerbName) else {
 			return VerbResult.verbNotFound
 		}
 		
-		switch verb {
-			
-		case .x:
-			return x(params)
-		}
+		return VerbResult.noLongerImplemented
 	}
-}
-
-private extension RegexVerbs {
-	
-	static func x(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
-	}
-	
 }

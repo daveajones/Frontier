@@ -51,9 +51,9 @@
 		84832F331EA5C1BC006B1665 /* DLLVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F321EA5C1BC006B1665 /* DLLVerbs.swift */; };
 		84832F351EA5C241006B1665 /* PictVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F341EA5C241006B1665 /* PictVerbs.swift */; };
 		84832F371EA5C2C2006B1665 /* QuickTimeVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F361EA5C2C2006B1665 /* QuickTimeVerbs.swift */; };
-		84832F391EA5C409006B1665 /* RegexVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F381EA5C409006B1665 /* RegexVerbs.swift */; };
+		84832F391EA5C409006B1665 /* RezVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F381EA5C409006B1665 /* RezVerbs.swift */; };
 		84832F3B1EA5C428006B1665 /* RectangleVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F3A1EA5C428006B1665 /* RectangleVerbs.swift */; };
-		84832F3D1EA5C488006B1665 /* RezVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F3C1EA5C488006B1665 /* RezVerbs.swift */; };
+		84832F3D1EA5C488006B1665 /* RegexVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F3C1EA5C488006B1665 /* RegexVerbs.swift */; };
 		84832F3F1EA5C58E006B1665 /* RGBVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F3E1EA5C58E006B1665 /* RGBVerbs.swift */; };
 		84832F411EA5C60D006B1665 /* SearchEngineVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832F401EA5C60D006B1665 /* SearchEngineVerbs.swift */; };
 		849023D81E9EC29C002D1BA7 /* VerbRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849023D71E9EC29C002D1BA7 /* VerbRunner.swift */; };
@@ -82,9 +82,9 @@
 		84832F321EA5C1BC006B1665 /* DLLVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DLLVerbs.swift; path = FrontierVerbs/VerbTables/DLLVerbs.swift; sourceTree = "<group>"; };
 		84832F341EA5C241006B1665 /* PictVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictVerbs.swift; path = FrontierVerbs/VerbTables/PictVerbs.swift; sourceTree = "<group>"; };
 		84832F361EA5C2C2006B1665 /* QuickTimeVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickTimeVerbs.swift; path = FrontierVerbs/VerbTables/QuickTimeVerbs.swift; sourceTree = "<group>"; };
-		84832F381EA5C409006B1665 /* RegexVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegexVerbs.swift; path = FrontierVerbs/VerbTables/RegexVerbs.swift; sourceTree = "<group>"; };
+		84832F381EA5C409006B1665 /* RezVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RezVerbs.swift; path = FrontierVerbs/VerbTables/RezVerbs.swift; sourceTree = "<group>"; };
 		84832F3A1EA5C428006B1665 /* RectangleVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RectangleVerbs.swift; path = FrontierVerbs/VerbTables/RectangleVerbs.swift; sourceTree = "<group>"; };
-		84832F3C1EA5C488006B1665 /* RezVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RezVerbs.swift; path = FrontierVerbs/VerbTables/RezVerbs.swift; sourceTree = "<group>"; };
+		84832F3C1EA5C488006B1665 /* RegexVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegexVerbs.swift; path = FrontierVerbs/VerbTables/RegexVerbs.swift; sourceTree = "<group>"; };
 		84832F3E1EA5C58E006B1665 /* RGBVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RGBVerbs.swift; path = FrontierVerbs/VerbTables/RGBVerbs.swift; sourceTree = "<group>"; };
 		84832F401EA5C60D006B1665 /* SearchEngineVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchEngineVerbs.swift; path = FrontierVerbs/VerbTables/SearchEngineVerbs.swift; sourceTree = "<group>"; };
 		849023D71E9EC29C002D1BA7 /* VerbRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerbRunner.swift; path = FrontierVerbs/VerbRunner.swift; sourceTree = "<group>"; };
@@ -231,8 +231,8 @@
 				84832F361EA5C2C2006B1665 /* QuickTimeVerbs.swift */,
 				84832F3E1EA5C58E006B1665 /* RGBVerbs.swift */,
 				84832F3A1EA5C428006B1665 /* RectangleVerbs.swift */,
-				84832F381EA5C409006B1665 /* RegexVerbs.swift */,
-				84832F3C1EA5C488006B1665 /* RezVerbs.swift */,
+				84832F381EA5C409006B1665 /* RezVerbs.swift */,
+				84832F3C1EA5C488006B1665 /* RegexVerbs.swift */,
 				84CE0F261EA2D95E000BF307 /* ScriptVerbs.swift */,
 				84CE0F271EA2D95E000BF307 /* SearchVerbs.swift */,
 				84832F401EA5C60D006B1665 /* SearchEngineVerbs.swift */,
@@ -391,8 +391,8 @@
 				84832F371EA5C2C2006B1665 /* QuickTimeVerbs.swift in Sources */,
 				84832F271EA3350F006B1665 /* SysVerbs.swift in Sources */,
 				84832F171EA3350F006B1665 /* LaunchVerbs.swift in Sources */,
-				84832F391EA5C409006B1665 /* RegexVerbs.swift in Sources */,
-				84832F3D1EA5C488006B1665 /* RezVerbs.swift in Sources */,
+				84832F391EA5C409006B1665 /* RezVerbs.swift in Sources */,
+				84832F3D1EA5C488006B1665 /* RegexVerbs.swift in Sources */,
 				84832F241EA3350F006B1665 /* SpeakerVerbs.swift in Sources */,
 				84832F2B1EA3350F006B1665 /* ThreadVerbs.swift in Sources */,
 				84832F411EA5C60D006B1665 /* SearchEngineVerbs.swift in Sources */,
