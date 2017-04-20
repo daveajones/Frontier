@@ -28,6 +28,7 @@
 		84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8581EA850700061A312 /* ShellWindow.xib */; };
 		84EEF85B1EA850830061A312 /* JumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF85A1EA850830061A312 /* JumpWindow.xib */; };
 		84EEF85D1EA8513E0061A312 /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF85C1EA8513E0061A312 /* DBViewController.swift */; };
+		84EEF8611EA8540A0061A312 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8601EA8540A0061A312 /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		84EEF8581EA850700061A312 /* ShellWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShellWindow.xib; path = Frontier/ShellWindow/ShellWindow.xib; sourceTree = "<group>"; };
 		84EEF85A1EA850830061A312 /* JumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JumpWindow.xib; path = Frontier/JumpWindow/JumpWindow.xib; sourceTree = "<group>"; };
 		84EEF85C1EA8513E0061A312 /* DBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBViewController.swift; path = Frontier/DB/DBViewController.swift; sourceTree = "<group>"; };
+		84EEF8601EA8540A0061A312 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				84EEF84C1EA84FBB0061A312 /* OP */,
 				84EEF84F1EA84FE50061A312 /* WP */,
 				84EEF8461EA7FFDE0061A312 /* JumpWindow */,
+				84EEF85F1EA8540A0061A312 /* Preferences */,
 				846188631E9D707A00A56F84 /* Info.plist */,
 				8461886B1E9D707A00A56F84 /* FrontierTests */,
 				846188581E9D707A00A56F84 /* Products */,
@@ -315,6 +318,15 @@
 				84EEF85C1EA8513E0061A312 /* DBViewController.swift */,
 			);
 			name = DB;
+			sourceTree = "<group>";
+		};
+		84EEF85F1EA8540A0061A312 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				84EEF8601EA8540A0061A312 /* PreferencesWindowController.swift */,
+			);
+			name = Preferences;
+			path = Frontier/Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EEF8551EA8502B0061A312 /* MainWindowViewController.swift in Sources */,
+				84EEF8611EA8540A0061A312 /* PreferencesWindowController.swift in Sources */,
 				84EEF8451EA7FFDA0061A312 /* JumpWindowController.swift in Sources */,
 				84EEF8531EA8502B0061A312 /* MainWindow.swift in Sources */,
 				8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */,
