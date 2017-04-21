@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8481D36A1EA9B54E008DBA8A /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8481D3691EA9B54E008DBA8A /* FrontierData.framework */; };
 		84832F081EA3350F006B1665 /* BitVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE0F021EA2D4AB000BF307 /* BitVerbs.swift */; };
 		84832F091EA3350F006B1665 /* ClipboardVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE0F041EA2D4E7000BF307 /* ClipboardVerbs.swift */; };
 		84832F0A1EA3350F006B1665 /* ClockVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE0F061EA2D93F000BF307 /* ClockVerbs.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8481D3691EA9B54E008DBA8A /* FrontierData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FrontierData.framework; path = "../../../Library/Developer/Xcode/DerivedData/Frontier-fcajnrwwhuhnzbdirndityaaqnhy/Build/Products/Debug/FrontierData.framework"; sourceTree = "<group>"; };
 		84832F301EA5C123006B1665 /* Base64Verbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base64Verbs.swift; path = FrontierVerbs/VerbTables/Base64Verbs.swift; sourceTree = "<group>"; };
 		84832F321EA5C1BC006B1665 /* DLLVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DLLVerbs.swift; path = FrontierVerbs/VerbTables/DLLVerbs.swift; sourceTree = "<group>"; };
 		84832F341EA5C241006B1665 /* PictVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictVerbs.swift; path = FrontierVerbs/VerbTables/PictVerbs.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8481D36A1EA9B54E008DBA8A /* FrontierData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +164,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8481D3681EA9B54E008DBA8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8481D3691EA9B54E008DBA8A /* FrontierData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84ECA7B41E9EC1CE00CB76EC = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +187,7 @@
 				84ECA7C21E9EC1CE00CB76EC /* Info.plist */,
 				84ECA7CB1E9EC1CF00CB76EC /* FrontierVerbsTests */,
 				84ECA7BF1E9EC1CE00CB76EC /* Products */,
+				8481D3681EA9B54E008DBA8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

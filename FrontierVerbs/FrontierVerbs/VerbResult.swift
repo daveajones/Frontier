@@ -7,40 +7,33 @@
 //
 
 import Foundation
-
-enum VerbError: Error {
-	case verbNotFound
-	case tooManyParams
-	case tooFewParams
-	case notImplemented
-	case noLongerImplemented
-}
+import FrontierData
 
 struct VerbResult {
 
 	static let empty = VerbResult(value: nil, error: nil)
-	static let verbNotFound = VerbResult(error: .verbNotFound)
-	static let tooManyParams = VerbResult(error: .tooManyParams)
-	static let tooFewParams = VerbResult(error: .tooFewParams)
-	static let notImplemented = VerbResult(error: .notImplemented)
-	static let noLongerImplemented = VerbResult(error: .noLongerImplemented)
+	static let verbNotFound = VerbResult(error: LangError(.verbNotFound))
+	static let tooManyParams = VerbResult(error: LangError(.tooManyParams))
+	static let tooFewParams = VerbResult(error: LangError(.tooFewParams))
+	static let notImplemented = VerbResult(error: LangError(.notImplemented))
+	static let noLongerImplemented = VerbResult(error: LangError(.noLongerImplemented))
 	static let verbTrue = VerbResult(value: true)
 	static let verbFalse = VerbResult(value: false)
 	
 	let value: Any?
-	let error: Error?
+	let error: LangError?
 	
 	init(value: Any) {
 		
 		self.init(value: value, error: nil)
 	}
 
-	init(error: VerbError) {
+	init(error: LangError) {
 		
 		self.init(value: nil, error: error)
 	}
 	
-	init(value: Any?, error: VerbError?) {
+	init(value: Any?, error: LangError?) {
 		
 		self.value = value
 		self.error = error

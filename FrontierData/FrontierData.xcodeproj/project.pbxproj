@@ -12,6 +12,13 @@
 		84553AB21EA9A30E002FC299 /* FrontierData.h in Headers */ = {isa = PBXBuildFile; fileRef = 84553AA41EA9A30E002FC299 /* FrontierData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8481D3571EA9A3BC008DBA8A /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3561EA9A3BC008DBA8A /* HashTable.swift */; };
 		8481D3591EA9A72C008DBA8A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3581EA9A72C008DBA8A /* Address.swift */; };
+		8481D35B1EA9A7CB008DBA8A /* HashNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D35A1EA9A7CB008DBA8A /* HashNode.swift */; };
+		8481D35D1EA9A8F8008DBA8A /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D35C1EA9A8F8008DBA8A /* Value.swift */; };
+		8481D35F1EA9AF91008DBA8A /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D35E1EA9AF91008DBA8A /* Direction.swift */; };
+		8481D3611EA9B09F008DBA8A /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3601EA9B09F008DBA8A /* TreeNode.swift */; };
+		8481D3631EA9B14A008DBA8A /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3621EA9B14A008DBA8A /* ValueType.swift */; };
+		8481D3651EA9B177008DBA8A /* TreeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3641EA9B177008DBA8A /* TreeType.swift */; };
+		8481D3671EA9B353008DBA8A /* LangError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3661EA9B353008DBA8A /* LangError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +40,13 @@
 		84553AB11EA9A30E002FC299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8481D3561EA9A3BC008DBA8A /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashTable.swift; path = FrontierData/HashTable.swift; sourceTree = "<group>"; };
 		8481D3581EA9A72C008DBA8A /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = FrontierData/Address.swift; sourceTree = "<group>"; };
+		8481D35A1EA9A7CB008DBA8A /* HashNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashNode.swift; path = FrontierData/HashNode.swift; sourceTree = "<group>"; };
+		8481D35C1EA9A8F8008DBA8A /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Value.swift; path = FrontierData/Value.swift; sourceTree = "<group>"; };
+		8481D35E1EA9AF91008DBA8A /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = FrontierData/Direction.swift; sourceTree = "<group>"; };
+		8481D3601EA9B09F008DBA8A /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNode.swift; path = FrontierData/TreeNode.swift; sourceTree = "<group>"; };
+		8481D3621EA9B14A008DBA8A /* ValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueType.swift; path = FrontierData/ValueType.swift; sourceTree = "<group>"; };
+		8481D3641EA9B177008DBA8A /* TreeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeType.swift; path = FrontierData/TreeType.swift; sourceTree = "<group>"; };
+		8481D3661EA9B353008DBA8A /* LangError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LangError.swift; path = FrontierData/LangError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +73,14 @@
 			children = (
 				84553AA41EA9A30E002FC299 /* FrontierData.h */,
 				8481D3561EA9A3BC008DBA8A /* HashTable.swift */,
+				8481D35A1EA9A7CB008DBA8A /* HashNode.swift */,
+				8481D35C1EA9A8F8008DBA8A /* Value.swift */,
+				8481D3621EA9B14A008DBA8A /* ValueType.swift */,
 				8481D3581EA9A72C008DBA8A /* Address.swift */,
+				8481D35E1EA9AF91008DBA8A /* Direction.swift */,
+				8481D3601EA9B09F008DBA8A /* TreeNode.swift */,
+				8481D3641EA9B177008DBA8A /* TreeType.swift */,
+				8481D3661EA9B353008DBA8A /* LangError.swift */,
 				84553AA51EA9A30E002FC299 /* Info.plist */,
 				84553AAE1EA9A30E002FC299 /* FrontierDataTests */,
 				84553AA21EA9A30E002FC299 /* Products */,
@@ -198,7 +219,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8481D3591EA9A72C008DBA8A /* Address.swift in Sources */,
+				8481D3631EA9B14A008DBA8A /* ValueType.swift in Sources */,
 				8481D3571EA9A3BC008DBA8A /* HashTable.swift in Sources */,
+				8481D3651EA9B177008DBA8A /* TreeType.swift in Sources */,
+				8481D35B1EA9A7CB008DBA8A /* HashNode.swift in Sources */,
+				8481D35F1EA9AF91008DBA8A /* Direction.swift in Sources */,
+				8481D35D1EA9A8F8008DBA8A /* Value.swift in Sources */,
+				8481D3611EA9B09F008DBA8A /* TreeNode.swift in Sources */,
+				8481D3671EA9B353008DBA8A /* LangError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
