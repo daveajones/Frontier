@@ -11,6 +11,10 @@
 		8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8461885E1E9D707A00A56F84 /* Assets.xcassets */; };
 		846188621E9D707A00A56F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846188601E9D707A00A56F84 /* Main.storyboard */; };
 		8461886D1E9D707A00A56F84 /* FrontierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461886C1E9D707A00A56F84 /* FrontierTests.swift */; };
+		8481D3491EA9A343008DBA8A /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84553AC21EA9A320002FC299 /* FrontierData.framework */; };
+		8481D34A1EA9A343008DBA8A /* FrontierData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84553AC21EA9A320002FC299 /* FrontierData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8481D3521EA9A34E008DBA8A /* FrontierDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849024381E9EC44F002D1BA7 /* FrontierDB.framework */; };
+		8481D3531EA9A34E008DBA8A /* FrontierDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 849024381E9EC44F002D1BA7 /* FrontierDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849023CE1E9EC24C002D1BA7 /* FrontierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7B01E9DC21000CB76EC /* FrontierCore.framework */; };
 		849023CF1E9EC24C002D1BA7 /* FrontierCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7B01E9DC21000CB76EC /* FrontierCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849023D31E9EC258002D1BA7 /* FrontierVerbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7E61E9EC20A00CB76EC /* FrontierVerbs.framework */; };
@@ -36,12 +40,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		84553AC11EA9A320002FC299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84553AA11EA9A30E002FC299;
+			remoteInfo = FrontierData;
+		};
+		84553AC31EA9A320002FC299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84553AAA1EA9A30E002FC299;
+			remoteInfo = FrontierDataTests;
+		};
 		846188691E9D707A00A56F84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8461884F1E9D707A00A56F84 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 846188561E9D707A00A56F84;
 			remoteInfo = Frontier;
+		};
+		8481D34B1EA9A343008DBA8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84553AA01EA9A30E002FC299;
+			remoteInfo = FrontierData;
+		};
+		8481D3541EA9A34E008DBA8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 849024171E9EC446002D1BA7;
+			remoteInfo = FrontierDB;
 		};
 		849023D01E9EC24C002D1BA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -130,8 +162,10 @@
 			dstSubfolderSpec = 10;
 			files = (
 				849023D41E9EC258002D1BA7 /* FrontierVerbs.framework in Embed Frameworks */,
+				8481D34A1EA9A343008DBA8A /* FrontierData.framework in Embed Frameworks */,
 				849023CF1E9EC24C002D1BA7 /* FrontierCore.framework in Embed Frameworks */,
 				8490240B1E9EC422002D1BA7 /* UserTalk.framework in Embed Frameworks */,
+				8481D3531EA9A34E008DBA8A /* FrontierDB.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +173,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierData.xcodeproj; path = FrontierData/FrontierData.xcodeproj; sourceTree = "<group>"; };
 		846188571E9D707A00A56F84 /* Frontier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461885A1E9D707A00A56F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Frontier/AppDelegate.swift; sourceTree = "<group>"; };
 		8461885E1E9D707A00A56F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Frontier/Assets.xcassets; sourceTree = "<group>"; };
@@ -175,8 +210,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				849023D31E9EC258002D1BA7 /* FrontierVerbs.framework in Frameworks */,
+				8481D3491EA9A343008DBA8A /* FrontierData.framework in Frameworks */,
 				849023CE1E9EC24C002D1BA7 /* FrontierCore.framework in Frameworks */,
 				8490240A1E9EC422002D1BA7 /* UserTalk.framework in Frameworks */,
+				8481D3521EA9A34E008DBA8A /* FrontierDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +227,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84553ABC1EA9A320002FC299 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84553AC21EA9A320002FC299 /* FrontierData.framework */,
+				84553AC41EA9A320002FC299 /* FrontierDataTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8461884E1E9D707A00A56F84 = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +253,7 @@
 				846188631E9D707A00A56F84 /* Info.plist */,
 				8461886B1E9D707A00A56F84 /* FrontierTests */,
 				846188581E9D707A00A56F84 /* Products */,
+				84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */,
 				84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */,
 				849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */,
 				849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */,
@@ -359,6 +406,8 @@
 				849023D11E9EC24C002D1BA7 /* PBXTargetDependency */,
 				849023D61E9EC258002D1BA7 /* PBXTargetDependency */,
 				8490240D1E9EC422002D1BA7 /* PBXTargetDependency */,
+				8481D34C1EA9A343008DBA8A /* PBXTargetDependency */,
+				8481D3551EA9A34E008DBA8A /* PBXTargetDependency */,
 			);
 			name = Frontier;
 			productName = Frontier;
@@ -423,6 +472,10 @@
 					ProjectRef = 84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */;
 				},
 				{
+					ProductGroup = 84553ABC1EA9A320002FC299 /* Products */;
+					ProjectRef = 84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */;
+				},
+				{
 					ProductGroup = 849024331E9EC44F002D1BA7 /* Products */;
 					ProjectRef = 849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */;
 				},
@@ -444,6 +497,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		84553AC21EA9A320002FC299 /* FrontierData.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FrontierData.framework;
+			remoteRef = 84553AC11EA9A320002FC299 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84553AC41EA9A320002FC299 /* FrontierDataTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FrontierDataTests.xctest;
+			remoteRef = 84553AC31EA9A320002FC299 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		849024071E9EC3D9002D1BA7 /* UserTalk.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -561,6 +628,16 @@
 			isa = PBXTargetDependency;
 			target = 846188561E9D707A00A56F84 /* Frontier */;
 			targetProxy = 846188691E9D707A00A56F84 /* PBXContainerItemProxy */;
+		};
+		8481D34C1EA9A343008DBA8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FrontierData;
+			targetProxy = 8481D34B1EA9A343008DBA8A /* PBXContainerItemProxy */;
+		};
+		8481D3551EA9A34E008DBA8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FrontierDB;
+			targetProxy = 8481D3541EA9A34E008DBA8A /* PBXContainerItemProxy */;
 		};
 		849023D11E9EC24C002D1BA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
