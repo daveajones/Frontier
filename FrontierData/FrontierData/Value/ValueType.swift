@@ -20,7 +20,7 @@ public enum ValueType: Int {
 	case long = 3
 	case oldString = 4
 	case binary = 5
-	case boolean = 6
+	case bool = 6
 	case token = 7
 	case date = 8
 	case address = 9

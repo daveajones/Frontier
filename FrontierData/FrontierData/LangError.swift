@@ -22,10 +22,15 @@ public struct LangError: Error {
 	public let lineNumber: Int?
 	public let characterIndex: Int?
 	
-	public  init(_ errorType: LangErrorType, lineNumber: Int? = nil, characterIndex: Int? = nil) {
+	public init(_ errorType: LangErrorType, lineNumber: Int? = nil, characterIndex: Int? = nil) {
 		
 		self.errorType = errorType
 		self.lineNumber = lineNumber
 		self.characterIndex = characterIndex
+	}
+	
+	func errorByAdding(lineNumber: Int, characterIndex: Int) -> LangError {
+		
+		return LangError(errorType, lineNumber: lineNumber, characterIndex: characterIndex)
 	}
 }

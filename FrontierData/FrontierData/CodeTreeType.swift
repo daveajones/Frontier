@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum TreeType: Int {
+public enum CodeTreeType: Int {
 	
 	// "Op" is added at the end of some names, so as not to conflict with Swift keywords.
 	

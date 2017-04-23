@@ -20,10 +20,10 @@ struct VerbResult {
 	static let verbTrue = VerbResult(value: true)
 	static let verbFalse = VerbResult(value: false)
 	
-	let value: Any?
+	let value: Value?
 	let error: LangError?
 	
-	init(value: Any) {
+	init(value: Value) {
 		
 		self.init(value: value, error: nil)
 	}
@@ -33,7 +33,7 @@ struct VerbResult {
 		self.init(value: nil, error: error)
 	}
 	
-	init(value: Any?, error: LangError?) {
+	init(value: Value?, error: LangError?) {
 		
 		self.value = value
 		self.error = error

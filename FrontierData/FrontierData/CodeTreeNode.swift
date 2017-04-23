@@ -1,5 +1,5 @@
 //
-//  TreeNode.swift
+//  CodeTreeNode.swift
 //  FrontierData
 //
 //  Created by Brent Simmons on 4/20/17.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct TreeNode {
+public struct CodeTreeNode {
 	
-	let nodeType: TreeType
+	let nodeType: CodeTreeType
 	let value: Value?
 	let lineNumber: Int?
 	let characterIndex: Int?
-	let params: [TreeNode]?
+	let params: [CodeTreeNode]?
 }
