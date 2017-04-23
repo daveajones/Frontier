@@ -26,5 +26,48 @@ public protocol Value {
 	var asDouble: Double? { get }
 	var asList: List? { get }
 	var asRecord: Record? { get }
+	
+	func isEqualTo(_ otherValue: Value) -> Bool
 }
 
+public extension Value {
+	
+	func isEqualTo(_ otherValue: Value) -> Bool {
+		
+		if valueType != otherValue.valueType {
+			return false
+		}
+		switch valueType {
+			
+		case .none:
+			return true
+		case .bool:
+			return asBool == otherValue.asBool
+		case .int:
+			return asInt == otherValue.asInt
+		case .date:
+			return asDate == otherValue.asDate
+		case .direction:
+			return asDirection == otherValue.asDirection
+		case .os:
+			return asInt == otherValue.asInt
+		case .enumType:
+			return asInt == otherValue.asInt
+		case .string:
+			return asString == otherValue.asString
+		case .address:
+			return asAddress == otherValue.asAddress
+		case .binary:
+			return asBinary == otherValue.asBinary
+		case .double:
+			return asDouble == otherValue.asDouble
+		case .list:
+			return asList!.isEqualTo(otherList: otherValue.asList!)
+//		case .record:
+//			return asRecord == otherValue.asRecord
+		default:
+			return false
+		}
+	}
+
+}

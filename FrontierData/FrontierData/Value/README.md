@@ -15,3 +15,7 @@ This was a perfectly reasonably approach in C. But, while it was nice that you c
 In this new Swift version there is no boxing. A `bool` is a `bool` — but, since it’s been extended to conform to the `Value` protocol, you can get its `valueType` and you can easily coerce it to another value.
 
 This gives us the best of all worlds: you can pass around `Value` types, but they’re not boxed, and you can easily do coercions.
+
+## Rules for coercions
+
+Some of the rules were figured out by reading the original code, and some were figured out by just testing original Frontier running on 10.6.8. See the unit tests.

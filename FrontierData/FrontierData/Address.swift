@@ -8,8 +8,8 @@
 
 import Foundation
 
-public struct Address {
-	
+public struct Address: Equatable {
+
 	let hashTable: HashTable
 	let name: String
 	
@@ -18,4 +18,12 @@ public struct Address {
 		self.hashTable = hashTable
 		self.name = name
 	}
+	
+	// MARK: Equatable
+	
+	public static func ==(lhs: Address, rhs: Address) -> Bool {
+		
+		return lhs.hashTable === rhs.hashTable && lhs.name == rhs.name
+	}
+
 }

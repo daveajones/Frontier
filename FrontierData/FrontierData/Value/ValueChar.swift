@@ -22,6 +22,12 @@ extension CChar: Value {
 		}
 	}
 	
+	public var asCChar: CChar? {
+		get {
+			return self
+		}
+	}
+	
 	public var asInt: Int? {
 		get {
 			return Int(self)

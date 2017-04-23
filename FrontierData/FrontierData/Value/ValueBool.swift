@@ -30,31 +30,31 @@ extension Bool: Value {
 	
 	public var asDate: Date? {
 		get {
-			return nil // TODO
+			return Date(timeIntervalSince1904: asDouble!)
 		}
 	}
 	
 	public var asDirection: Direction? {
 		get {
-			return nil //TODO
+			return Direction(rawValue: asInt!)
 		}
 	}
 	
 	public var asOSType: OSType? {
 		get {
-			return nil //TODO
+			return asInt!.asOSType
 		}
 	}
 	
 	public var asEnum: Enum? {
 		get {
-			return nil //TODO
+			return asInt!.asEnum
 		}
 	}
 	
 	public var asString: String? {
 		get {
-			return nil //TODO
+			return self ? "true" : "false"
 		}
 	}
 	
@@ -72,13 +72,13 @@ extension Bool: Value {
 	
 	public var asDouble: Double? {
 		get {
-			return nil //TODO
+			return Double(asInt!)
 		}
 	}
 	
 	public var asList: List? {
 		get {
-			return nil //TODO
+			return List(value: self)
 		}
 	}
 	
