@@ -54,7 +54,7 @@ extension Double: Value {
 	
 	public var asString: String? {
 		get {
-			return nil //TODO
+			return "\(self)"
 		}
 	}
 	
