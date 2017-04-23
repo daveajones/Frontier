@@ -20,7 +20,6 @@ extension Date: Value {
 		}
 	}
 	
-	
 	public var asBool: Bool? {
 		get {
 			return asInt! != 0
@@ -33,7 +32,67 @@ extension Date: Value {
 		}
 	}
 	
-	init(timeIntervalSince1904: TimeInterval) {
+	public var asDate: Date? {
+		get {
+			return self
+		}
+	}
+	
+	public var asDirection: Direction? {
+		get {
+			return nil //TODO
+		}
+	}
+	
+	public var asOSType: OSType? {
+		get {
+			return nil //TODO
+		}
+	}
+	
+	public var asEnum: Enum? {
+		get {
+			return nil //TODO
+		}
+	}
+	
+	public var asString: String? {
+		get {
+			return nil //TODO
+		}
+	}
+	
+	public var asAddress: Address? {
+		get {
+			return nil //TODO
+		}
+	}
+	
+	public var asBinary: Data? {
+		get {
+			return nil //TODO
+		}
+	}
+	
+	public var asDouble: Double? {
+		get {
+			return nil //TODO
+		}
+	}
+	
+	public var asList: List? {
+		get {
+			return nil //TODO
+		}
+	}
+	
+	public var asRecord: Record? {
+		get {
+			return nil //TODO
+		}
+	}
+
+	public init(timeIntervalSince1904: TimeInterval) {
 		
 		self.init(timeIntervalSince1970: timeIntervalSince1904 - unixEpochMinusOldMacEpoch)
 	}

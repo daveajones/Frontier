@@ -13,5 +13,10 @@ import Foundation
 
 public struct Enum {
 	
-	let asOSType: OSType
+	let osType: OSType
+	
+	init(osType: OSType) {
+		
+		self.osType = osType
+	}
 }

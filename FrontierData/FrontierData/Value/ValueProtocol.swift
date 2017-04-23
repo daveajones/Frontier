@@ -16,15 +16,15 @@ public protocol Value {
 
 	var asBool: Bool? { get }
 	var asInt: Int? { get }
-//	var asDate: Date? { get }
-//	var asDirection: Direction? { get }
-//	var asOSType: OSType? { get }
-//	var asEnum: OSType? { get }
-//	var asString: String? { get }
-//	var asAddress: Address? { get }
-//	var asBinary: Data? { get }
-//	var asDouble: Double? { get }
-//	var asList: ValueList? { get }
-//	var asRecord: ValueRecord? { get }
+	var asDate: Date? { get }
+	var asDirection: Direction? { get }
+	var asOSType: OSType? { get }
+	var asEnum: Enum? { get }
+	var asString: String? { get }
+	var asAddress: Address? { get }
+	var asBinary: Data? { get }
+	var asDouble: Double? { get }
+	var asList: List? { get }
+	var asRecord: Record? { get }
 }
 
