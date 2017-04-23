@@ -87,6 +87,7 @@
 		8481D3921EAC1A74008DBA8A /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = FrontierData/Enum.swift; sourceTree = "<group>"; };
 		8481D3941EAC20E4008DBA8A /* FileSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileSpec.swift; path = FrontierData/FileSpec.swift; sourceTree = "<group>"; };
 		8481D3961EAC247D008DBA8A /* OSType-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "OSType-Extension.swift"; path = "FrontierData/OSType-Extension.swift"; sourceTree = "<group>"; };
+		8481D3981EAC326F008DBA8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = FrontierData/Value/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +153,7 @@
 		8481D36B1EAB00F9008DBA8A /* Value */ = {
 			isa = PBXGroup;
 			children = (
+				8481D3981EAC326F008DBA8A /* README.md */,
 				8481D3701EAB048E008DBA8A /* ValueType.swift */,
 				8481D3721EAB0495008DBA8A /* ValueProtocol.swift */,
 				8481D38C1EABDA37008DBA8A /* ValueNone.swift */,
