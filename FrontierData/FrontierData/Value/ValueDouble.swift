@@ -36,7 +36,7 @@ extension Double: Value {
 	
 	public var asDirection: Direction? {
 		get {
-			return nil //TODO
+			return nil //Checked: “Can’t coerce a double value to a direction.”
 		}
 	}
 	

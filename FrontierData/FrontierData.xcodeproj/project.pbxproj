@@ -40,6 +40,7 @@
 		8481D3951EAC20E4008DBA8A /* FileSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3941EAC20E4008DBA8A /* FileSpec.swift */; };
 		8481D3971EAC247D008DBA8A /* OSType-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3961EAC247D008DBA8A /* OSType-Extension.swift */; };
 		8481D39C1EAC4194008DBA8A /* TestEqualityBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D39B1EAC4194008DBA8A /* TestEqualityBool.swift */; };
+		8481D39E1EAC472A008DBA8A /* TestEqualityInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D39D1EAC472A008DBA8A /* TestEqualityInt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		8481D3961EAC247D008DBA8A /* OSType-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "OSType-Extension.swift"; path = "FrontierData/OSType-Extension.swift"; sourceTree = "<group>"; };
 		8481D3981EAC326F008DBA8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = FrontierData/Value/README.md; sourceTree = "<group>"; };
 		8481D39B1EAC4194008DBA8A /* TestEqualityBool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEqualityBool.swift; sourceTree = "<group>"; };
+		8481D39D1EAC472A008DBA8A /* TestEqualityInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEqualityInt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				84553AAF1EA9A30E002FC299 /* FrontierDataTests.swift */,
 				8481D39B1EAC4194008DBA8A /* TestEqualityBool.swift */,
+				8481D39D1EAC472A008DBA8A /* TestEqualityInt.swift */,
 				84553AB11EA9A30E002FC299 /* Info.plist */,
 			);
 			path = FrontierDataTests;
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8481D39E1EAC472A008DBA8A /* TestEqualityInt.swift in Sources */,
 				84553AB01EA9A30E002FC299 /* FrontierDataTests.swift in Sources */,
 				8481D39C1EAC4194008DBA8A /* TestEqualityBool.swift in Sources */,
 			);
