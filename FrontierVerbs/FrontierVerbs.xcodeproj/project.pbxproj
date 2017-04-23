@@ -63,7 +63,6 @@
 		84ECA7CD1E9EC1CF00CB76EC /* FrontierVerbsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA7CC1E9EC1CF00CB76EC /* FrontierVerbsTests.swift */; };
 		84ECA7CF1E9EC1CF00CB76EC /* FrontierVerbs.h in Headers */ = {isa = PBXBuildFile; fileRef = 84ECA7C11E9EC1CE00CB76EC /* FrontierVerbs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84EEF8361EA7FA220061A312 /* VerbAppDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8351EA7FA220061A312 /* VerbAppDelegateProtocol.swift */; };
-		84F561E61E9EC4E40098DE62 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F561E51E9EC4E40098DE62 /* Param.swift */; };
 		84F561E81E9F2DD80098DE62 /* VerbTableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F561E71E9F2DD80098DE62 /* VerbTableProtocol.swift */; };
 		84F561EB1E9F3A370098DE62 /* VerbResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F561EA1E9F3A370098DE62 /* VerbResult.swift */; };
 /* End PBXBuildFile section */
@@ -139,7 +138,6 @@
 		84ECA7CC1E9EC1CF00CB76EC /* FrontierVerbsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontierVerbsTests.swift; sourceTree = "<group>"; };
 		84ECA7CE1E9EC1CF00CB76EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84EEF8351EA7FA220061A312 /* VerbAppDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerbAppDelegateProtocol.swift; path = FrontierVerbs/VerbAppDelegateProtocol.swift; sourceTree = "<group>"; };
-		84F561E51E9EC4E40098DE62 /* Param.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Param.swift; path = FrontierVerbs/Param.swift; sourceTree = "<group>"; };
 		84F561E71E9F2DD80098DE62 /* VerbTableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerbTableProtocol.swift; path = FrontierVerbs/VerbTableProtocol.swift; sourceTree = "<group>"; };
 		84F561EA1E9F3A370098DE62 /* VerbResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerbResult.swift; path = FrontierVerbs/VerbResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,7 +179,6 @@
 				84EEF8351EA7FA220061A312 /* VerbAppDelegateProtocol.swift */,
 				84F561E71E9F2DD80098DE62 /* VerbTableProtocol.swift */,
 				849023DB1E9EC301002D1BA7 /* VerbParams.swift */,
-				84F561E51E9EC4E40098DE62 /* Param.swift */,
 				84F561EA1E9F3A370098DE62 /* VerbResult.swift */,
 				84F561E91E9F39960098DE62 /* Verb Tables */,
 				84ECA7C21E9EC1CE00CB76EC /* Info.plist */,
@@ -387,7 +384,6 @@
 				84832F0A1EA3350F006B1665 /* ClockVerbs.swift in Sources */,
 				84832F3B1EA5C428006B1665 /* RectangleVerbs.swift in Sources */,
 				84832F0B1EA3350F006B1665 /* CryptVerbs.swift in Sources */,
-				84F561E61E9EC4E40098DE62 /* Param.swift in Sources */,
 				84832F0C1EA3350F006B1665 /* DateVerbs.swift in Sources */,
 				84832F121EA3350F006B1665 /* FrontierVerbs.swift in Sources */,
 				84832F181EA3350F006B1665 /* MainWindowVerbs.swift in Sources */,

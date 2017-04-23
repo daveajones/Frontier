@@ -52,4 +52,68 @@ public enum ValueType: Int {
 	case script = 35
 	case menu = 36
 	case qdPict = 37
+	
+	// MARK: Coercion
+	
+	func commonCoercionType(otherValueType: ValueType) -> ValueType? {
+		
+		if self == otherValueType {
+			return self
+		}
+		
+		if self.coercionWeight() >= otherValueType.coercionWeight() {
+			return self
+		}
+		return otherValueType
+	}
+	
+	func coercionWeight() -> Int {
+		
+		// OrigFrontier: langvalue.c cercionweight function.
+		
+		switch self {
+			
+		case .none:
+			return 0
+			
+		case .bool:
+			return 1
+			
+		case .int, .token:
+			return 2
+			
+		case .direction, .char, .long, .os, .point:
+			return 3
+			
+		case .date:
+			return 4
+			
+		case .fixed, .single:
+			return 5
+			
+		case .double:
+			return 7
+			
+		case .qdRect, .qdPattern, .qdRGB, .fileSpec, .alias, .address, .external:
+			return 8
+			
+		case .objSpec:
+			return 9
+			
+		case .string, .password:
+			return 10
+			
+		case .binary:
+			return 11
+			
+		case .list:
+			return 12
+			
+		case .record:
+			return 13
+			
+		default:
+			return 1
+		}
+	}
 }

@@ -32,6 +32,58 @@ public protocol Value {
 
 public extension Value {
 	
+	func commonCoercionType(with otherValue: Value) -> ValueType? {
+		
+		return valueType.commonCoercionType(otherValueType: otherValue.valueType)
+	}
+	
+//	func valuesCoercedToCommonType(with otherValue: Value) -> (Value, Value)? {
+//		
+//		// TODO: throw error instead of return optional.
+//		
+//		if let commonType = commonCoercionType(with: otherValue) {
+//			if let v1 = self.asType(commonType), let v2 = otherValue.asType(commonType) {
+//				return (v1, v2)
+//			}
+//		}
+//		return nil
+//	}
+	
+	func asType(_ valueType: ValueType) -> Value? {
+		
+		switch valueType {
+			
+		case .none:
+			return NSNull()
+		case .bool:
+			return asBool
+		case .int:
+			return asInt
+		case .date:
+			return asDate
+		case .direction:
+			return asDirection
+		case .os:
+			return asOSType
+		case .enumType:
+			return asEnum
+		case .string:
+			return asString
+		case .address:
+			return asAddress
+		case .binary:
+			return asBinary
+		case .double:
+			return asDouble
+		case .list:
+			return asList
+			//		case .record:
+		//			return asRecord
+		default:
+			return nil
+		}
+	}
+	
 	func isEqualTo(_ otherValue: Value) -> Bool {
 		
 		if valueType != otherValue.valueType {
@@ -69,5 +121,4 @@ public extension Value {
 			return false
 		}
 	}
-
 }

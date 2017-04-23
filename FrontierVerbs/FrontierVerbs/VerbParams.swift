@@ -7,14 +7,33 @@
 //
 
 import Cocoa
+import FrontierData
 
 struct VerbParams {
 
-	let ordered: [Param]
-	let named: [String: Param]
+	let ordered: [Value]
+	let named: [String: Value]
 	let count: Int
 	
-	init(ordered: [Param], named: [String: Param]) {
+	var binaryParams: (Value, Value)? {
+		get {
+			if count == 2 {
+				return (ordered[0], ordered[1])
+			}
+			return nil
+		}
+	}
+	
+	var singleParam: Value? {
+		get {
+			if count == 1 {
+				return ordered[0]
+			}
+			return nil
+		}
+	}
+	
+	init(ordered: [Value], named: [String: Value]) {
 		
 		self.ordered = ordered
 		self.named = named
