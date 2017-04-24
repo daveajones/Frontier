@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct HTMLVerbs: VerbTable {
 	
@@ -36,179 +37,182 @@ struct HTMLVerbs: VerbTable {
 		case drawCalendar = "drawcalendar"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .processMacros:
-			return processMacros(params)
-		case .urlDecode:
-			return urlDecode(params)
-		case .urlEncode:
-			return urlEncode(params)
-		case .parseHTTPArgs:
-			return parseHTTPArgs(params)
-		case .iso8859Encode:
-			return iso8859Encode(params)
-		case .getGIFHeightWidth:
-			return getGIFHeightWidth(params)
-		case .getJPEGHeightWidth:
-			return getJPEGHeightWidth(params)
-		case .buildPageTable:
-			return buildPageTable(params)
-		case .refGlossary:
-			return refGlossary(params)
-		case .getPref:
-			return getPref(params)
-		case .getOneDirective:
-			return getOneDirective(params)
-		case .runDirective:
-			return runDirective(params)
-		case .runDirectives:
-			return runDirectives(params)
-		case .runOutlineDirectives:
-			return runOutlineDirectives(params)
-		case .cleanForExport:
-			return cleanForExport(params)
-		case .normalizeName:
-			return normalizeName(params)
-		case .glossaryPatcher:
-			return glossaryPatcher(params)
-		case .expandURLs:
-			return expandURLs(params)
-		case .traversalSkip:
-			return traversalSkip(params)
-		case .getPageTableAddress:
-			return getPageTableAddress(params)
-		case .neuterMacros:
-			return neuterMacros(params)
-		case .neuterTags:
-			return neuterTags(params)
-		case .drawCalendar:
-			return drawCalendar(params)
+		do {
+			switch verb {
+				
+			case .processMacros:
+				return try processMacros(params)
+			case .urlDecode:
+				return try urlDecode(params)
+			case .urlEncode:
+				return try urlEncode(params)
+			case .parseHTTPArgs:
+				return try parseHTTPArgs(params)
+			case .iso8859Encode:
+				return try iso8859Encode(params)
+			case .getGIFHeightWidth:
+				return try getGIFHeightWidth(params)
+			case .getJPEGHeightWidth:
+				return try getJPEGHeightWidth(params)
+			case .buildPageTable:
+				return try buildPageTable(params)
+			case .refGlossary:
+				return try refGlossary(params)
+			case .getPref:
+				return try getPref(params)
+			case .getOneDirective:
+				return try getOneDirective(params)
+			case .runDirective:
+				return try runDirective(params)
+			case .runDirectives:
+				return try runDirectives(params)
+			case .runOutlineDirectives:
+				return try runOutlineDirectives(params)
+			case .cleanForExport:
+				return try cleanForExport(params)
+			case .normalizeName:
+				return try normalizeName(params)
+			case .glossaryPatcher:
+				return try glossaryPatcher(params)
+			case .expandURLs:
+				return try expandURLs(params)
+			case .traversalSkip:
+				return try traversalSkip(params)
+			case .getPageTableAddress:
+				return try getPageTableAddress(params)
+			case .neuterMacros:
+				return try neuterMacros(params)
+			case .neuterTags:
+				return try neuterTags(params)
+			case .drawCalendar:
+				return try drawCalendar(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension HTMLVerbs {
 	
-	static func processMacros(_ params: VerbParams) -> VerbResult {
+	static func processMacros(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func urlDecode(_ params: VerbParams) -> VerbResult {
+	static func urlDecode(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func urlEncode(_ params: VerbParams) -> VerbResult {
+	static func urlEncode(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func parseHTTPArgs(_ params: VerbParams) -> VerbResult {
+	static func parseHTTPArgs(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func iso8859Encode(_ params: VerbParams) -> VerbResult {
+	static func iso8859Encode(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getGIFHeightWidth(_ params: VerbParams) -> VerbResult {
+	static func getGIFHeightWidth(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getJPEGHeightWidth(_ params: VerbParams) -> VerbResult {
+	static func getJPEGHeightWidth(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func buildPageTable(_ params: VerbParams) -> VerbResult {
+	static func buildPageTable(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func refGlossary(_ params: VerbParams) -> VerbResult {
+	static func refGlossary(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getPref(_ params: VerbParams) -> VerbResult {
+	static func getPref(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getOneDirective(_ params: VerbParams) -> VerbResult {
+	static func getOneDirective(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func runDirective(_ params: VerbParams) -> VerbResult {
+	static func runDirective(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func runDirectives(_ params: VerbParams) -> VerbResult {
+	static func runDirectives(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func runOutlineDirectives(_ params: VerbParams) -> VerbResult {
+	static func runOutlineDirectives(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func cleanForExport(_ params: VerbParams) -> VerbResult {
+	static func cleanForExport(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func normalizeName(_ params: VerbParams) -> VerbResult {
+	static func normalizeName(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func glossaryPatcher(_ params: VerbParams) -> VerbResult {
+	static func glossaryPatcher(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func expandURLs(_ params: VerbParams) -> VerbResult {
+	static func expandURLs(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func traversalSkip(_ params: VerbParams) -> VerbResult {
+	static func traversalSkip(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getPageTableAddress(_ params: VerbParams) -> VerbResult {
+	static func getPageTableAddress(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func neuterMacros(_ params: VerbParams) -> VerbResult {
+	static func neuterMacros(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func neuterTags(_ params: VerbParams) -> VerbResult {
+	static func neuterTags(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func drawCalendar(_ params: VerbParams) -> VerbResult {
+	static func drawCalendar(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

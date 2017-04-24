@@ -55,7 +55,7 @@ public enum ValueType: Int {
 	
 	// MARK: Coercion
 	
-	func commonCoercionType(otherValueType: ValueType) -> ValueType? {
+	func commonCoercionType(otherValueType: ValueType) -> ValueType {
 		
 		if self == otherValueType {
 			return self

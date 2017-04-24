@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct MouseVerbs: VerbTable {
 	
@@ -15,32 +16,35 @@ struct MouseVerbs: VerbTable {
 		case location = "location"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .button:
-			return button(params)
-		case .location:
-			return location(params)
+		do {
+			switch verb {
+				
+			case .button:
+				return try button(params)
+			case .location:
+				return try location(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension MouseVerbs {
 	
-	static func button(_ params: VerbParams) -> VerbResult {
+	static func button(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func location(_ params: VerbParams) -> VerbResult {
+	static func location(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

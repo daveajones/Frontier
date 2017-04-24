@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 
 struct Base64Verbs: VerbTable {
@@ -15,33 +16,35 @@ struct Base64Verbs: VerbTable {
 		case decode = "decode"
 		case encode = "encode"
 	}
-
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .decode:
-			return decode(params)
-		case .encode:
-			return encode(params)
+		do {
+			switch verb {				
+			case .decode:
+				return try decode(params)
+			case .encode:
+				return try encode(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension Base64Verbs {
 	
-	static func decode(_ params: VerbParams) -> VerbResult {
+	static func decode(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
-
-	static func encode(_ params: VerbParams) -> VerbResult {
+	
+	static func encode(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }
 

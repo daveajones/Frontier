@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct OSAVerbs: VerbTable {
 	
@@ -15,32 +16,35 @@ struct OSAVerbs: VerbTable {
 		case getSource = "getsource"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .compile:
-			return compile(params)
-		case .getSource:
-			return getSource(params)
+		do {
+			switch verb {
+				
+			case .compile:
+				return try compile(params)
+			case .getSource:
+				return try getSource(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension OSAVerbs {
 	
-	static func compile(_ params: VerbParams) -> VerbResult {
+	static func compile(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getSource(_ params: VerbParams) -> VerbResult {
+	static func getSource(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

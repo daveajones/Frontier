@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct ClockVerbs: VerbTable {
 	
@@ -19,59 +20,67 @@ struct ClockVerbs: VerbTable {
 		case waitSixtieths = "waitsixtieths"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .now:
-			return now(params)
-		case .sleepFor:
-			return sleepFor(params)
-		case .ticks:
-			return ticks(params)
-		case .milliseconds:
-			return milliseconds(params)
-		case .waitSeconds:
-			return waitSeconds(params)
-		case .waitSixtieths:
-			return waitSixtieths(params)
+		do {
+			switch verb {
+				
+			case .now:
+				return try now(params)
+			case .sleepFor:
+				return try sleepFor(params)
+			case .ticks:
+				return try ticks(params)
+			case .milliseconds:
+				return try milliseconds(params)
+			case .waitSeconds:
+				return try waitSeconds(params)
+			case .waitSixtieths:
+				return try waitSixtieths(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension ClockVerbs {
 	
-	static func now(_ params: VerbParams) -> VerbResult {
+	static func now(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		do {
+			try params.throwParamCountErrorIfNeeded(0)
+		}
+		catch { throw error }
+		
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func sleepFor(_ params: VerbParams) -> VerbResult {
+	static func sleepFor(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func ticks(_ params: VerbParams) -> VerbResult {
+	static func ticks(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func milliseconds(_ params: VerbParams) -> VerbResult {
+	static func milliseconds(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func waitSeconds(_ params: VerbParams) -> VerbResult {
+	static func waitSeconds(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func waitSixtieths(_ params: VerbParams) -> VerbResult {
+	static func waitSixtieths(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }

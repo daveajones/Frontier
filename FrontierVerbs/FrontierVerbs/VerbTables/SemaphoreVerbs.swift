@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct SemaphoreVerbs: VerbTable {
 	
@@ -15,31 +16,34 @@ struct SemaphoreVerbs: VerbTable {
 		case unlock = "unlock"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .lock:
-			return lock(params)
-		case .unlock:
-			return unlock(params)
+		do {
+			switch verb {
+				
+			case .lock:
+				return try lock(params)
+			case .unlock:
+				return try unlock(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension SemaphoreVerbs {
 	
-	static func lock(_ params: VerbParams) -> VerbResult {
+	static func lock(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
-
-	static func unlock(_ params: VerbParams) -> VerbResult {
+	
+	static func unlock(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }

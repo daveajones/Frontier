@@ -32,7 +32,7 @@ public protocol Value {
 
 public extension Value {
 	
-	func commonCoercionType(with otherValue: Value) -> ValueType? {
+	func commonCoercionType(with otherValue: Value) -> ValueType {
 		
 		return valueType.commonCoercionType(otherValueType: otherValue.valueType)
 	}

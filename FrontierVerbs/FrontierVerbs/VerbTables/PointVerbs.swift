@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct PointVerbs: VerbTable {
 	
@@ -15,32 +16,35 @@ struct PointVerbs: VerbTable {
 		case set = "set"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .get:
-			return get(params)
-		case .set:
-			return set(params)
+		do {
+			switch verb {
+				
+			case .get:
+				return try get(params)
+			case .set:
+				return try set(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension PointVerbs {
 	
-	static func get(_ params: VerbParams) -> VerbResult {
+	static func get(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func set(_ params: VerbParams) -> VerbResult {
+	static func set(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

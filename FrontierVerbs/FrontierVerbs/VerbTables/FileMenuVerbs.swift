@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct FileMenuVerbs: VerbTable {
 	
@@ -22,83 +23,86 @@ struct FileMenuVerbs: VerbTable {
 		case saveAs = "saveAs"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .new:
-			return new(params)
-		case .open:
-			return open(params)
-		case .close:
-			return close(params)
-		case .closeAll:
-			return closeAll(params)
-		case .save:
-			return save(params)
-		case .saveCopy:
-			return saveCopy(params)
-		case .revert:
-			return revert(params)
-		case .print:
-			return VerbResult.noLongerImplemented
-		case .quit:
-			return quit(params)
-		case .saveAs:
-			return saveAs(params)
+		do {
+			switch verb {
+				
+			case .new:
+				return try new(params)
+			case .open:
+				return try open(params)
+			case .close:
+				return try close(params)
+			case .closeAll:
+				return try closeAll(params)
+			case .save:
+				return try save(params)
+			case .saveCopy:
+				return try saveCopy(params)
+			case .revert:
+				return try revert(params)
+			case .print:
+				throw LangError(.noLongerImplemented)
+			case .quit:
+				return try quit(params)
+			case .saveAs:
+				return try saveAs(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension FileMenuVerbs {
 	
-	static func new(_ params: VerbParams) -> VerbResult {
+	static func new(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func open(_ params: VerbParams) -> VerbResult {
+	static func open(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func close(_ params: VerbParams) -> VerbResult {
+	static func close(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func closeAll(_ params: VerbParams) -> VerbResult {
+	static func closeAll(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func save(_ params: VerbParams) -> VerbResult {
+	static func save(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func saveCopy(_ params: VerbParams) -> VerbResult {
+	static func saveCopy(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func revert(_ params: VerbParams) -> VerbResult {
+	static func revert(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func quit(_ params: VerbParams) -> VerbResult {
+	static func quit(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func saveAs(_ params: VerbParams) -> VerbResult {
+	static func saveAs(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct SysVerbs: VerbTable {
 	
@@ -29,114 +30,117 @@ struct SysVerbs: VerbTable {
 		case winShellCommand = "winshellCommand"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .osVersion:
-			return osVersion(params)
-		case .systemTask:
-			return VerbResult.noLongerImplemented
-		case .browseNetwork:
-			return browseNetwork(params)
-		case .appIsRunning:
-			return appIsRunning(params)
-		case .frontmostApp:
-			return frontmostApp(params)
-		case .bringAppToFront:
-			return bringAppToFront(params)
-		case .countApps:
-			return countApps(params)
-		case .getNthApp:
-			return getNthApp(params)
-		case .getAppPath:
-			return getAppPath(params)
-		case .memAvail:
-			return VerbResult.noLongerImplemented
-		case .machine:
-			return machine(params)
-		case .os:
-			return os(params)
-		case .getEnvironmentVariable:
-			return getEnvironmentVariable(params)
-		case .setEnvironmentVariable:
-			return setEnvironmentVariable(params)
-		case .unixShellCommand:
-			return unixShellCommand(params)
-		case .winShellCommand:
-			return VerbResult.noLongerImplemented
+		do {
+			switch verb {
+				
+			case .osVersion:
+				return try osVersion(params)
+			case .systemTask:
+				return true
+			case .browseNetwork:
+				return try browseNetwork(params)
+			case .appIsRunning:
+				return try appIsRunning(params)
+			case .frontmostApp:
+				return try frontmostApp(params)
+			case .bringAppToFront:
+				return try bringAppToFront(params)
+			case .countApps:
+				return try countApps(params)
+			case .getNthApp:
+				return try getNthApp(params)
+			case .getAppPath:
+				return try getAppPath(params)
+			case .memAvail:
+				return Int.max
+			case .machine:
+				return try machine(params)
+			case .os:
+				return try os(params)
+			case .getEnvironmentVariable:
+				return try getEnvironmentVariable(params)
+			case .setEnvironmentVariable:
+				return try setEnvironmentVariable(params)
+			case .unixShellCommand:
+				return try unixShellCommand(params)
+			case .winShellCommand:
+				return false
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension SysVerbs {
 	
-	static func osVersion(_ params: VerbParams) -> VerbResult {
+	static func osVersion(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func browseNetwork(_ params: VerbParams) -> VerbResult {
+	static func browseNetwork(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func appIsRunning(_ params: VerbParams) -> VerbResult {
+	static func appIsRunning(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func frontmostApp(_ params: VerbParams) -> VerbResult {
+	static func frontmostApp(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func bringAppToFront(_ params: VerbParams) -> VerbResult {
+	static func bringAppToFront(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func countApps(_ params: VerbParams) -> VerbResult {
+	static func countApps(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getNthApp(_ params: VerbParams) -> VerbResult {
+	static func getNthApp(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getAppPath(_ params: VerbParams) -> VerbResult {
+	static func getAppPath(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func machine(_ params: VerbParams) -> VerbResult {
+	static func machine(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func os(_ params: VerbParams) -> VerbResult {
+	static func os(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getEnvironmentVariable(_ params: VerbParams) -> VerbResult {
+	static func getEnvironmentVariable(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setEnvironmentVariable(_ params: VerbParams) -> VerbResult {
+	static func setEnvironmentVariable(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
-
-	static func unixShellCommand(_ params: VerbParams) -> VerbResult {
+	
+	static func unixShellCommand(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }

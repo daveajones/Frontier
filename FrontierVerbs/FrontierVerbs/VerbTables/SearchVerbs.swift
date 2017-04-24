@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct SearchVerbs: VerbTable {
 	
@@ -17,47 +18,50 @@ struct SearchVerbs: VerbTable {
 		case replaceAll = "replaceall"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .reset:
-			return reset(params)
-		case .findNext:
-			return findNext(params)
-		case .replace:
-			return replace(params)
-		case .replaceAll:
-			return replaceAll(params)
+		do {
+			switch verb {
+				
+			case .reset:
+				return try reset(params)
+			case .findNext:
+				return try findNext(params)
+			case .replace:
+				return try replace(params)
+			case .replaceAll:
+				return try replaceAll(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension SearchVerbs {
 	
-	static func reset(_ params: VerbParams) -> VerbResult {
+	static func reset(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func findNext(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func replace(_ params: VerbParams) -> VerbResult {
+	static func findNext(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func replaceAll(_ params: VerbParams) -> VerbResult {
+	static func replace(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-
+	static func replaceAll(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct InetdVerbs: VerbTable {
 	
@@ -14,25 +15,28 @@ struct InetdVerbs: VerbTable {
 		case supervisor = "supervisor"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .supervisor:
-			return supervisor(params)
+		do {
+			switch verb {
+				
+			case .supervisor:
+				return try supervisor(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension InetdVerbs {
 	
-	static func supervisor(_ params: VerbParams) -> VerbResult {
+	static func supervisor(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct DBVerbs: VerbTable {
 	
@@ -26,108 +27,111 @@ struct DBVerbs: VerbTable {
 		case getModDate = "getmoddate"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .new:
-			return new(params)
-		case .open:
-			return open(params)
-		case .save:
-			return save(params)
-		case .close:
-			return close(params)
-		case .defined:
-			return defined(params)
-		case .getValue:
-			return getValue(params)
-		case .setValue:
-			return setValue(params)
-		case .delete:
-			return delete(params)
-		case .newTable:
-			return newTable(params)
-		case .isTable:
-			return isTable(params)
-		case .countItems:
-			return countItems(params)
-		case .getNthItem:
-			return getNthItem(params)
-		case .getModDate:
-			return getModDate(params)
+		do {
+			switch verb {
+				
+			case .new:
+				return try new(params)
+			case .open:
+				return try open(params)
+			case .save:
+				return try save(params)
+			case .close:
+				return try close(params)
+			case .defined:
+				return try defined(params)
+			case .getValue:
+				return try getValue(params)
+			case .setValue:
+				return try setValue(params)
+			case .delete:
+				return try delete(params)
+			case .newTable:
+				return try newTable(params)
+			case .isTable:
+				return try isTable(params)
+			case .countItems:
+				return try countItems(params)
+			case .getNthItem:
+				return try getNthItem(params)
+			case .getModDate:
+				return try getModDate(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension DBVerbs {
 	
-	static func new(_ params: VerbParams) -> VerbResult {
+	static func new(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func open(_ params: VerbParams) -> VerbResult {
+	static func open(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func save(_ params: VerbParams) -> VerbResult {
+	static func save(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func close(_ params: VerbParams) -> VerbResult {
+	static func close(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func defined(_ params: VerbParams) -> VerbResult {
+	static func defined(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getValue(_ params: VerbParams) -> VerbResult {
+	static func getValue(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setValue(_ params: VerbParams) -> VerbResult {
+	static func setValue(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func delete(_ params: VerbParams) -> VerbResult {
+	static func delete(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func newTable(_ params: VerbParams) -> VerbResult {
+	static func newTable(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func isTable(_ params: VerbParams) -> VerbResult {
+	static func isTable(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func countItems(_ params: VerbParams) -> VerbResult {
+	static func countItems(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getNthItem(_ params: VerbParams) -> VerbResult {
+	static func getNthItem(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getModDate(_ params: VerbParams) -> VerbResult {
+	static func getModDate(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }

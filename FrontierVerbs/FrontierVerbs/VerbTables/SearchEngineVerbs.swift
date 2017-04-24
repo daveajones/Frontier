@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 // No longer implemented.
 // Wish list: implement verbs using SearchKit for creating and searching indexes.
@@ -21,12 +22,12 @@ struct SearchEngineVerbs: VerbTable {
 		case mergeResults = "mergeresults"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let _ = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		return VerbResult.noLongerImplemented
+		return false
 	}
 }

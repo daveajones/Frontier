@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct SpeakerVerbs: VerbTable {
 	
@@ -16,42 +17,45 @@ struct SpeakerVerbs: VerbTable {
 		case playNamedSound = "playnamedsound"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .beep:
-			return beep(params)
-		case .sound:
-			return sound(params)
-		case .playNamedSound:
-			return playNamedSound(params)
+		do {
+			switch verb {
+				
+			case .beep:
+				return try beep(params)
+			case .sound:
+				return try sound(params)
+			case .playNamedSound:
+				return try playNamedSound(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension SpeakerVerbs {
 	
-	static func beep(_ params: VerbParams) -> VerbResult {
+	static func beep(_ params: VerbParams) throws -> Value {
 		
 		NSBeep()
-		return VerbResult.verbTrue
-	}
-
-	static func sound(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		return true
 	}
 	
-
-	static func playNamedSound(_ params: VerbParams) -> VerbResult {
+	static func sound(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-
+	
+	static func playNamedSound(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	
 }

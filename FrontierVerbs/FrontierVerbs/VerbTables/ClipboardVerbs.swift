@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct ClipboardVerbs: VerbTable {
 	
@@ -15,31 +16,33 @@ struct ClipboardVerbs: VerbTable {
 		case put = "put"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .get:
-			return get(params)
-		case .put:
-			return put(params)
+		do {			
+			switch verb {
+			case .get:
+				return try get(params)
+			case .put:
+				return try put(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension ClipboardVerbs {
 	
-	static func get(_ params: VerbParams) -> VerbResult {
+	static func get(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func put(_ params: VerbParams) -> VerbResult {
+	static func put(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }

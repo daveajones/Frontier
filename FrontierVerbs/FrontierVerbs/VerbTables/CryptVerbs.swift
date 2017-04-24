@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct CryptVerbs: VerbTable {
 	
@@ -18,52 +19,55 @@ struct CryptVerbs: VerbTable {
 		case hmacSHA1 = "hmacsha1"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .whirlpool:
-			return whirlpool(params)
-		case .hmacMD5:
-			return hmacMD5(params)
-		case .MD5:
-			return MD5(params)
-		case .SHA1:
-			return SHA1(params)
-		case .hmacSHA1:
-			return hmacSHA1(params)
+		do {
+			switch verb {
+				
+			case .whirlpool:
+				return try whirlpool(params)
+			case .hmacMD5:
+				return try hmacMD5(params)
+			case .MD5:
+				return try MD5(params)
+			case .SHA1:
+				return try SHA1(params)
+			case .hmacSHA1:
+				return try hmacSHA1(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension CryptVerbs {
 	
-	static func whirlpool(_ params: VerbParams) -> VerbResult {
+	static func whirlpool(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func hmacMD5(_ params: VerbParams) -> VerbResult {
+	static func hmacMD5(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func MD5(_ params: VerbParams) -> VerbResult {
+	static func MD5(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func SHA1(_ params: VerbParams) -> VerbResult {
+	static func SHA1(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func hmacSHA1(_ params: VerbParams) -> VerbResult {
+	static func hmacSHA1(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct WebserverVerbs: VerbTable {
 	
@@ -20,68 +21,71 @@ struct WebserverVerbs: VerbTable {
 		case getServerString = "getserverstring"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .server:
-			return server(params)
-		case .dispatch:
-			return dispatch(params)
-		case .parseHeaders:
-			return parseHeaders(params)
-		case .parseCookies:
-			return parseCookies(params)
-		case .buildResponse:
-			return buildResponse(params)
-		case .buildErrorPage:
-			return buildErrorPage(params)
-		case .getServerString:
-			return getServerString(params)
+		do {
+			switch verb {
+				
+			case .server:
+				return try server(params)
+			case .dispatch:
+				return try dispatch(params)
+			case .parseHeaders:
+				return try parseHeaders(params)
+			case .parseCookies:
+				return try parseCookies(params)
+			case .buildResponse:
+				return try buildResponse(params)
+			case .buildErrorPage:
+				return try buildErrorPage(params)
+			case .getServerString:
+				return try getServerString(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension WebserverVerbs {
 	
-	static func server(_ params: VerbParams) -> VerbResult {
+	static func server(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func dispatch(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func parseHeaders(_ params: VerbParams) -> VerbResult {
+	static func dispatch(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func parseCookies(_ params: VerbParams) -> VerbResult {
+	static func parseHeaders(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func buildResponse(_ params: VerbParams) -> VerbResult {
+	static func parseCookies(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func buildErrorPage(_ params: VerbParams) -> VerbResult {
+	static func buildResponse(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getServerString(_ params: VerbParams) -> VerbResult {
+	static func buildErrorPage(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-
+	static func getServerString(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	
 }

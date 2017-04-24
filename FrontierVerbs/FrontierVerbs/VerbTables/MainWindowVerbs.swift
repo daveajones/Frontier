@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct MainWindowVerbs: VerbTable {
 	
@@ -20,24 +21,24 @@ struct MainWindowVerbs: VerbTable {
 		case showServerStats = "showserverstats"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
 		if verb == .showServerStats {
-			return showServerStats(params, verbAppDelegate)
+			return try showServerStats(params, verbAppDelegate)
 		}
-		return VerbResult.noLongerImplemented
+		return false
 	}
 }
 
 private extension MainWindowVerbs {
 	
-	static func showServerStats(_ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func showServerStats(_ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

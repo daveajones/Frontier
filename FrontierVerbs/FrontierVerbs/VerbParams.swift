@@ -15,28 +15,56 @@ struct VerbParams {
 	let named: [String: Value]
 	let count: Int
 	
-	var binaryParams: (Value, Value)? {
-		get {
-			if count == 2 {
-				return (ordered[0], ordered[1])
-			}
-			return nil
-		}
-	}
-	
-	var singleParam: Value? {
-		get {
-			if count == 1 {
-				return ordered[0]
-			}
-			return nil
-		}
-	}
-	
 	init(ordered: [Value], named: [String: Value]) {
 		
 		self.ordered = ordered
 		self.named = named
 		self.count = ordered.count
 	}
+	
+	// MARK: Common Cases
+	
+	func singleParam() throws -> Value {
+	
+		guard count == 1 else {
+			throw paramCountError(1)
+		}
+		return ordered[0]
+	}
+	
+	func binaryParams() throws -> (Value, Value) {
+		
+		guard count == 2 else {
+			throw paramCountError(2)
+		}
+		return (ordered[0], ordered[1])
+	}
+	
+	func trinaryParams() throws -> (Value, Value, Value) {
+		
+		guard count == 3 else {
+			throw paramCountError(3)
+		}
+		return (ordered[0], ordered[1], ordered[2])
+	}
+	
+	// MARK: Errors
+	
+	func paramCountError(_ expected: Int) -> LangError {
+		
+		assert(expected != count)
+		
+		if expected < count {
+			return LangError(.notEnoughParameters)
+		}
+		return LangError(.tooManyParameters)
+	}
+	
+	func throwParamCountErrorIfNeeded(_ expected: Int) throws {
+		
+		if expected != count {
+			throw paramCountError(expected)
+		}
+	}
 }
+

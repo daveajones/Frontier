@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 // Notes:
 // Original Frontier has its own XML parser.
@@ -32,117 +33,120 @@ struct XMLVerbs: VerbTable {
 		case convertToDisplayName = "converttodisplayname"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .addTable:
-			return addTable(params)
-		case .addValue:
-			return addValue(params)
-		case .compile:
-			return compile(params)
-		case .deCompile:
-			return deCompile(params)
-		case .getAddress:
-			return getAddress(params)
-		case .getAddressList:
-			return getAddressList(params)
-		case .getAttribute:
-			return getAttribute(params)
-		case .getAttributeValue:
-			return getAttributeValue(params)
-		case .getValue:
-			return getValue(params)
-		case .valToString:
-			return valToString(params)
-		case .frontierValueToTaggedText:
-			return frontierValueToTaggedText(params)
-		case .structToFrontierValue:
-			return structToFrontierValue(params)
-		case .getPathAddress:
-			return getPathAddress(params)
-		case .convertToDisplayName:
-			return convertToDisplayName(params)
+		do {
+			switch verb {
+				
+			case .addTable:
+				return try addTable(params)
+			case .addValue:
+				return try addValue(params)
+			case .compile:
+				return try compile(params)
+			case .deCompile:
+				return try deCompile(params)
+			case .getAddress:
+				return try getAddress(params)
+			case .getAddressList:
+				return try getAddressList(params)
+			case .getAttribute:
+				return try getAttribute(params)
+			case .getAttributeValue:
+				return try getAttributeValue(params)
+			case .getValue:
+				return try getValue(params)
+			case .valToString:
+				return try valToString(params)
+			case .frontierValueToTaggedText:
+				return try frontierValueToTaggedText(params)
+			case .structToFrontierValue:
+				return try structToFrontierValue(params)
+			case .getPathAddress:
+				return try getPathAddress(params)
+			case .convertToDisplayName:
+				return try convertToDisplayName(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension XMLVerbs {
 	
-	static func addTable(_ params: VerbParams) -> VerbResult {
+	static func addTable(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func addValue(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func compile(_ params: VerbParams) -> VerbResult {
+	static func addValue(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func deCompile(_ params: VerbParams) -> VerbResult {
+	static func compile(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getAddress(_ params: VerbParams) -> VerbResult {
+	static func deCompile(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getAddressList(_ params: VerbParams) -> VerbResult {
+	static func getAddress(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getAttribute(_ params: VerbParams) -> VerbResult {
+	static func getAddressList(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getAttributeValue(_ params: VerbParams) -> VerbResult {
+	static func getAttribute(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getValue(_ params: VerbParams) -> VerbResult {
+	static func getAttributeValue(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func valToString(_ params: VerbParams) -> VerbResult {
+	static func getValue(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func frontierValueToTaggedText(_ params: VerbParams) -> VerbResult {
+	static func valToString(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func structToFrontierValue(_ params: VerbParams) -> VerbResult {
+	static func frontierValueToTaggedText(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getPathAddress(_ params: VerbParams) -> VerbResult {
+	static func structToFrontierValue(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func convertToDisplayName(_ params: VerbParams) -> VerbResult {
+	static func getPathAddress(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-
+	static func convertToDisplayName(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	
 }

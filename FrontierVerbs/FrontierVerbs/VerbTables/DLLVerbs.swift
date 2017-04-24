@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct DLLVerbs: VerbTable {
 	
@@ -17,45 +18,48 @@ struct DLLVerbs: VerbTable {
 		case isLoaded = "isloaded"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .call:
-			return call(params)
-		case .load:
-			return load(params)
-		case .unload:
-			return unload(params)
-		case .isLoaded:
-			return isLoaded(params)
+		do {
+			switch verb {
+				
+			case .call:
+				return try call(params)
+			case .load:
+				return try load(params)
+			case .unload:
+				return try unload(params)
+			case .isLoaded:
+				return try isLoaded(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension DLLVerbs {
 	
-	static func call(_ params: VerbParams) -> VerbResult {
+	static func call(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func load(_ params: VerbParams) -> VerbResult {
+	static func load(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
-
-	static func unload(_ params: VerbParams) -> VerbResult {
+	
+	static func unload(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
-
-	static func isLoaded(_ params: VerbParams) -> VerbResult {
+	
+	static func isLoaded(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }

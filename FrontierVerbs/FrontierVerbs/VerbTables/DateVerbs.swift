@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct DateVerbs: VerbTable {
 	
@@ -43,227 +44,230 @@ struct DateVerbs: VerbTable {
 		case seconds = "seconds"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .get:
-			return get(params)
-		case .set:
-			return set(params)
-		case .abbrevString:
-			return abbrevString(params)
-		case .dayOfWeek:
-			return dayOfWeek(params)
-		case .daysInMonth:
-			return daysInMonth(params)
-		case .dayString:
-			return dayString(params)
-		case .firstOfMonth:
-			return firstOfMonth(params)
-		case .lastOfMonth:
-			return lastOfMonth(params)
-		case .longString:
-			return longString(params)
-		case .nextMonth:
-			return nextMonth(params)
-		case .nextWeek:
-			return nextWeek(params)
-		case .nextYear:
-			return nextYear(params)
-		case .prevMonth:
-			return prevMonth(params)
-		case .prevWeek:
-			return prevWeek(params)
-		case .prevYear:
-			return prevYear(params)
-		case .shortString:
-			return shortString(params)
-		case .tomorrow:
-			return tomorrow(params)
-		case .weeksInMonth:
-			return weeksInMonth(params)
-		case .yesterday:
-			return yesterday(params)
-		case .getCurrentTimeZone:
-			return getCurrentTimeZone(params)
-		case .netStandardString:
-			return netStandardString(params)
-		case .monthToString:
-			return monthToString(params)
-		case .dayOfWeekToString:
-			return dayOfWeekToString(params)
-		case .versionLessThan:
-			return versionLessThan(params)
-		case .day:
-			return day(params)
-		case .month:
-			return month(params)
-		case .year:
-			return year(params)
-		case .hour:
-			return hour(params)
-		case .minute:
-			return minute(params)
-		case .seconds:
-			return seconds(params)
+		do {
+			switch verb {
+				
+			case .get:
+				return try get(params)
+			case .set:
+				return try set(params)
+			case .abbrevString:
+				return try abbrevString(params)
+			case .dayOfWeek:
+				return try dayOfWeek(params)
+			case .daysInMonth:
+				return try daysInMonth(params)
+			case .dayString:
+				return try dayString(params)
+			case .firstOfMonth:
+				return try firstOfMonth(params)
+			case .lastOfMonth:
+				return try lastOfMonth(params)
+			case .longString:
+				return try longString(params)
+			case .nextMonth:
+				return try nextMonth(params)
+			case .nextWeek:
+				return try nextWeek(params)
+			case .nextYear:
+				return try nextYear(params)
+			case .prevMonth:
+				return try prevMonth(params)
+			case .prevWeek:
+				return try prevWeek(params)
+			case .prevYear:
+				return try prevYear(params)
+			case .shortString:
+				return try shortString(params)
+			case .tomorrow:
+				return try tomorrow(params)
+			case .weeksInMonth:
+				return try weeksInMonth(params)
+			case .yesterday:
+				return try yesterday(params)
+			case .getCurrentTimeZone:
+				return try getCurrentTimeZone(params)
+			case .netStandardString:
+				return try netStandardString(params)
+			case .monthToString:
+				return try monthToString(params)
+			case .dayOfWeekToString:
+				return try dayOfWeekToString(params)
+			case .versionLessThan:
+				return try versionLessThan(params)
+			case .day:
+				return try day(params)
+			case .month:
+				return try month(params)
+			case .year:
+				return try year(params)
+			case .hour:
+				return try hour(params)
+			case .minute:
+				return try minute(params)
+			case .seconds:
+				return try seconds(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension DateVerbs {
 	
-	static func get(_ params: VerbParams) -> VerbResult {
+	static func get(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func set(_ params: VerbParams) -> VerbResult {
+	static func set(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func abbrevString(_ params: VerbParams) -> VerbResult {
+	static func abbrevString(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func dayOfWeek(_ params: VerbParams) -> VerbResult {
+	static func dayOfWeek(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func daysInMonth(_ params: VerbParams) -> VerbResult {
+	static func daysInMonth(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func dayString(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func firstOfMonth(_ params: VerbParams) -> VerbResult {
+	static func dayString(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func lastOfMonth(_ params: VerbParams) -> VerbResult {
+	static func firstOfMonth(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func longString(_ params: VerbParams) -> VerbResult {
+	static func lastOfMonth(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func nextMonth(_ params: VerbParams) -> VerbResult {
+	static func longString(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func nextWeek(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func nextYear(_ params: VerbParams) -> VerbResult {
+	static func nextMonth(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func prevMonth(_ params: VerbParams) -> VerbResult {
+	static func nextWeek(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func prevWeek(_ params: VerbParams) -> VerbResult {
+	static func nextYear(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func prevYear(_ params: VerbParams) -> VerbResult {
+	static func prevMonth(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func shortString(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func tomorrow(_ params: VerbParams) -> VerbResult {
+	static func prevWeek(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func weeksInMonth(_ params: VerbParams) -> VerbResult {
+	static func prevYear(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func yesterday(_ params: VerbParams) -> VerbResult {
+	static func shortString(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getCurrentTimeZone(_ params: VerbParams) -> VerbResult {
+	static func tomorrow(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func netStandardString(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func monthToString(_ params: VerbParams) -> VerbResult {
+	static func weeksInMonth(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func dayOfWeekToString(_ params: VerbParams) -> VerbResult {
+	static func yesterday(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func versionLessThan(_ params: VerbParams) -> VerbResult {
+	static func getCurrentTimeZone(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func day(_ params: VerbParams) -> VerbResult {
+	static func netStandardString(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func month(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func year(_ params: VerbParams) -> VerbResult {
+	static func monthToString(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func hour(_ params: VerbParams) -> VerbResult {
+	static func dayOfWeekToString(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func minute(_ params: VerbParams) -> VerbResult {
+	static func versionLessThan(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func seconds(_ params: VerbParams) -> VerbResult {
+	static func day(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
+	}
+	
+	static func month(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	static func year(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	static func hour(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	static func minute(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	static func seconds(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
 	}
 }

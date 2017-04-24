@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 // No longer implemented.
 // These verbs operated on resource fork items, which isn’t really a thing on OS X.
@@ -31,12 +32,12 @@ struct RezVerbs: VerbTable {
 		case setResourceAttributes = "setresourceattributes"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let _ = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		return VerbResult.noLongerImplemented
+		return false
 	}
 }

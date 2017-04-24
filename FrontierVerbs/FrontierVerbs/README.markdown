@@ -26,13 +26,8 @@ We’ll use FileVerbs as an example, but the process is the same for all of the 
 
 You also have to add a corresponding object to the database. But you’ve done the kernel housekeeping bits.
 
-## Stubs
-
-At this writing, VerbParameters, Parameter, and VerbResult are all just temporary. Once UserTalk.framework is filled, we’ll switch to using types defined in the language.
-
 ## Not-Implemented and No-Longer-Implemented
 
-Any verb not *yet* implemented, but that will be, should return `VerbResult.notImplemented`.
+Any verb not *yet* implemented, but that will be, should throw `LangError.unimplementedVerb`.
 
-Any verb that was implemented in a previous version of Frontier, but longer makes sense for whatever reason, should return `VerbResult.NoLongerImplemented`. (Example: `RezVerbs`.)
-
+Any verb that was implemented in a previous version of Frontier, but is no longer implemented, should probably return something that doesn’t break existing scripts — such as true or false. However, for cases where an error is truly needed, use `LangError.noLongerImplemented`.

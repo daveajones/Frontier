@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import FrontierData
 
 struct FileVerbs: VerbTable {
 	
@@ -13,25 +14,28 @@ struct FileVerbs: VerbTable {
 		case x = "x"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .x:
-			return x(params)
+		do {
+			switch verb {
+				
+			case .x:
+				return try x(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension FileVerbs {
 	
-	static func x(_ params: VerbParams) -> VerbResult {
+	static func x(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

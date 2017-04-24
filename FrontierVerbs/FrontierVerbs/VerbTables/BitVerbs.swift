@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 
 struct BitVerbs: VerbTable {
@@ -21,75 +22,78 @@ struct BitVerbs: VerbTable {
 		case shiftLeft = "shiftleft"
 		case shiftRight = "shiftright"
 	}
-
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .clear:
-			return clear(params)
-		case .get:
-			return get(params)
-		case .logicalAnd:
-			return logicalAnd(params)
-		case .logicalOr:
-			return logicalOr(params)
-		case .logicalXor:
-			return logicalXor(params)
-		case .set:
-			return set(params)
-		case .shiftLeft:
-			return shiftLeft(params)
-		case .shiftRight:
-			return shiftRight(params)
+		do {
+			switch verb {
+				
+			case .clear:
+				return try clear(params)
+			case .get:
+				return try get(params)
+			case .logicalAnd:
+				return try logicalAnd(params)
+			case .logicalOr:
+				return try logicalOr(params)
+			case .logicalXor:
+				return try logicalXor(params)
+			case .set:
+				return try set(params)
+			case .shiftLeft:
+				return try shiftLeft(params)
+			case .shiftRight:
+				return try shiftRight(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension BitVerbs {
 	
-	static func clear(_ params: VerbParams) -> VerbResult {
+	static func clear(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
-	}
-
-	static func get(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
-	}
-
-	static func logicalAnd(_ params: VerbParams) -> VerbResult {
-		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func logicalOr(_ params: VerbParams) -> VerbResult {
+	static func get(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func logicalXor(_ params: VerbParams) -> VerbResult {
+	static func logicalAnd(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func set(_ params: VerbParams) -> VerbResult {
+	static func logicalOr(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func shiftLeft(_ params: VerbParams) -> VerbResult {
+	static func logicalXor(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func shiftRight(_ params: VerbParams) -> VerbResult {
+	static func set(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
+	}
+	
+	static func shiftLeft(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
+	}
+	
+	static func shiftRight(_ params: VerbParams) throws -> Value {
+		
+		throw LangError(.unimplementedVerb)
 	}
 }
 

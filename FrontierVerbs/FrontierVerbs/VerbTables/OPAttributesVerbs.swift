@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct OPAttributesVerbs: VerbTable {
 	
@@ -18,53 +19,56 @@ struct OPAttributesVerbs: VerbTable {
 		case setOne = "setone"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .addGroup:
-			return addGroup(params)
-		case .getAll:
-			return getAll(params)
-		case .getOne:
-			return getOne(params)
-		case .makeEmpty:
-			return makeEmpty(params)
-		case .setOne:
-			return setOne(params)
+		do {
+			switch verb {
+				
+			case .addGroup:
+				return try addGroup(params)
+			case .getAll:
+				return try getAll(params)
+			case .getOne:
+				return try getOne(params)
+			case .makeEmpty:
+				return try makeEmpty(params)
+			case .setOne:
+				return try setOne(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension OPAttributesVerbs {
 	
-	static func addGroup(_ params: VerbParams) -> VerbResult {
+	static func addGroup(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getAll(_ params: VerbParams) -> VerbResult {
+	static func getAll(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getOne(_ params: VerbParams) -> VerbResult {
+	static func getOne(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func makeEmpty(_ params: VerbParams) -> VerbResult {
+	static func makeEmpty(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setOne(_ params: VerbParams) -> VerbResult {
+	static func setOne(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

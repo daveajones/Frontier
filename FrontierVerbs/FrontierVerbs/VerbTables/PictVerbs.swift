@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 // No longer implemented.
 
@@ -19,12 +20,12 @@ struct PictVerbs: VerbTable {
 		case setPicture = "setpicture"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let _ = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		return VerbResult.noLongerImplemented
+		return false
 	}
 }

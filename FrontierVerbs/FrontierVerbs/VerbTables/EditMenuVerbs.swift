@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct EditMenuVerbs: VerbTable {
 	
@@ -29,129 +30,132 @@ struct EditMenuVerbs: VerbTable {
 		case setShadow = "setshadow"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .undo:
-			return undo(params)
-		case .cut:
-			return cut(params)
-		case .copy:
-			return copy(params)
-		case .paste:
-			return paste(params)
-		case .clear:
-			return clear(params)
-		case .selectAll:
-			return selectAll(params)
-		case .getFont:
-			return getFont(params)
-		case .getFontSize:
-			return getFontSize(params)
-		case .setFont:
-			return setFont(params)
-		case .setFontSize:
-			return setFontSize(params)
-		case .plainText:
-			return plainText(params)
-		case .setBold:
-			return setBold(params)
-		case .setItalic:
-			return setItalic(params)
-		case .setUnderline:
-			return setUnderline(params)
-		case .setOutline:
-			return setOutline(params)
-		case .setShadow:
-			return setShadow(params)
+		do {
+			switch verb {
+				
+			case .undo:
+				return try undo(params)
+			case .cut:
+				return try cut(params)
+			case .copy:
+				return try copy(params)
+			case .paste:
+				return try paste(params)
+			case .clear:
+				return try clear(params)
+			case .selectAll:
+				return try selectAll(params)
+			case .getFont:
+				return try getFont(params)
+			case .getFontSize:
+				return try getFontSize(params)
+			case .setFont:
+				return try setFont(params)
+			case .setFontSize:
+				return try setFontSize(params)
+			case .plainText:
+				return try plainText(params)
+			case .setBold:
+				return try setBold(params)
+			case .setItalic:
+				return try setItalic(params)
+			case .setUnderline:
+				return try setUnderline(params)
+			case .setOutline:
+				return try setOutline(params)
+			case .setShadow:
+				return try setShadow(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension EditMenuVerbs {
 	
-	static func undo(_ params: VerbParams) -> VerbResult {
+	static func undo(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func cut(_ params: VerbParams) -> VerbResult {
+	static func cut(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func copy(_ params: VerbParams) -> VerbResult {
+	static func copy(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func paste(_ params: VerbParams) -> VerbResult {
+	static func paste(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func clear(_ params: VerbParams) -> VerbResult {
+	static func clear(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func selectAll(_ params: VerbParams) -> VerbResult {
+	static func selectAll(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getFont(_ params: VerbParams) -> VerbResult {
+	static func getFont(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getFontSize(_ params: VerbParams) -> VerbResult {
+	static func getFontSize(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setFont(_ params: VerbParams) -> VerbResult {
+	static func setFont(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setFontSize(_ params: VerbParams) -> VerbResult {
+	static func setFontSize(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func plainText(_ params: VerbParams) -> VerbResult {
+	static func plainText(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setBold(_ params: VerbParams) -> VerbResult {
+	static func setBold(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setItalic(_ params: VerbParams) -> VerbResult {
+	static func setItalic(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setUnderline(_ params: VerbParams) -> VerbResult {
+	static func setUnderline(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setOutline(_ params: VerbParams) -> VerbResult {
+	static func setOutline(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func setShadow(_ params: VerbParams) -> VerbResult {
+	static func setShadow(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 }

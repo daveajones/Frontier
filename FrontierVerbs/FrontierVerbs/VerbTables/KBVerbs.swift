@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct KBVerbs: VerbTable {
 	
@@ -17,46 +18,49 @@ struct KBVerbs: VerbTable {
 		case controlKey = "controlkey"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .optionKey:
-			return isOptionKeyDown(params)
-		case .cmdKey:
-			return isCmdKeyDown(params)
-		case .shiftKey:
-			return isShiftKeyDown(params)
-		case .controlKey:
-			return isControlKeyDown(params)
+		do {
+			switch verb {
+				
+			case .optionKey:
+				return try isOptionKeyDown(params)
+			case .cmdKey:
+				return try isCmdKeyDown(params)
+			case .shiftKey:
+				return try isShiftKeyDown(params)
+			case .controlKey:
+				return try isControlKeyDown(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension KBVerbs {
 	
-	static func isOptionKeyDown(_ params: VerbParams) -> VerbResult {
+	static func isOptionKeyDown(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func isCmdKeyDown(_ params: VerbParams) -> VerbResult {
+	static func isCmdKeyDown(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func isShiftKeyDown(_ params: VerbParams) -> VerbResult {
+	static func isShiftKeyDown(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func isControlKeyDown(_ params: VerbParams) -> VerbResult {
+	static func isControlKeyDown(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

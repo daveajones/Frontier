@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 struct LaunchVerbs: VerbTable {
 	
@@ -18,43 +19,46 @@ struct LaunchVerbs: VerbTable {
 		case anything = "anything"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .appleMenu:
-			return VerbResult.noLongerImplemented
-		case .application:
-			return launchApplication(params)
-		case .appWithDocument:
-			return launchAppWithDocument(params)
-		case .resource:
-			return VerbResult.noLongerImplemented
-		case .anything:
-			return launchAnything(params)
+		do {
+			switch verb {
+				
+			case .appleMenu:
+				return false
+			case .application:
+				return try launchApplication(params)
+			case .appWithDocument:
+				return try launchAppWithDocument(params)
+			case .resource:
+				return false
+			case .anything:
+				return try launchAnything(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
 private extension LaunchVerbs {
 	
-	static func launchApplication(_ params: VerbParams) -> VerbResult {
+	static func launchApplication(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func launchAppWithDocument(_ params: VerbParams) -> VerbResult {
+	static func launchAppWithDocument(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
-	static func launchAnything(_ params: VerbParams) -> VerbResult {
+	static func launchAnything(_ params: VerbParams) throws -> Value {
 		
-		return VerbResult.notImplemented
+		throw LangError(.unimplementedVerb)
 	}
 	
 }

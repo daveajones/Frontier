@@ -17,21 +17,24 @@ struct MathVerbs: VerbTable {
 		case sqrt = "sqrt"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		switch verb {
-			
-		case .min:
-			return mathMin(params)
-		case .max:
-			return mathMax(params)
-		case .sqrt:
-			return mathSqrt(params)
+		do {
+			switch verb {
+				
+			case .min:
+				return try mathMin(params)
+			case .max:
+				return try mathMax(params)
+			case .sqrt:
+				return try mathSqrt(params)
+			}
 		}
+		catch { throw error }
 	}
 }
 
@@ -45,11 +48,9 @@ private extension MathVerbs {
 		return v1 < v2 ? .orderedAscending : .orderedDescending
 	}
 	
-	static func compareTwoValues(_ value1: Value, _ value2: Value) -> ComparisonResult? {
+	static func compareTwoValues(_ value1: Value, _ value2: Value) throws -> ComparisonResult {
 		
-		guard let coercionType = value1.commonCoercionType(with: value2) else {
-			return nil
-		}
+		let coercionType = value1.commonCoercionType(with: value2)
 		
 		switch coercionType {
 			
@@ -64,52 +65,49 @@ private extension MathVerbs {
 			
 		case .string:
 			return compareValues(value1.asString!, value2.asString!)
-
+			
 		default:
-			return nil
+			throw LangError(.coercionNotPossible)
 		}
 	}
 	
-	static func mathMin(_ params: VerbParams) -> VerbResult {
+	static func mathMin(_ params: VerbParams) throws -> Value {
 		
-		guard let (value1, value2) = params.binaryParams else {
-			return VerbResult.paramCountError(params.count, expected: 2)!
-		}
-		
-		if let comparisonResult = compareTwoValues(value1, value2) {
+		do {
+			let (value1, value2) = try params.binaryParams()
+			let comparisonResult = try compareTwoValues(value1, value2)
+			
 			if comparisonResult == .orderedSame || comparisonResult == .orderedAscending {
-				return VerbResult(value1)
+				return value1
 			}
-			return VerbResult(value2)
+			return value2
 		}
-		return VerbResult(value1) // TODO: coercion error instead
+		catch { throw error }
 	}
 	
-	static func mathMax(_ params: VerbParams) -> VerbResult {
+	static func mathMax(_ params: VerbParams) throws -> Value {
 		
-		guard let (value1, value2) = params.binaryParams else {
-			return VerbResult.paramCountError(params.count, expected: 2)!
-		}
-		
-		if let comparisonResult = compareTwoValues(value1, value2) {
-			if comparisonResult == .orderedSame || comparisonResult == .orderedDescending {
-				return VerbResult(value1)
+		do {
+			let (value1, value2) = try params.binaryParams()
+			let comparisonResult = try compareTwoValues(value1, value2)
+			
+			if comparisonResult == .orderedAscending {
+				return value2
 			}
-			return VerbResult(value2)
+			return value1
 		}
-		return VerbResult(value1) // TODO: coercion error instead
+		catch { throw error }
 	}
 	
-	static func mathSqrt(_ params: VerbParams) -> VerbResult {
+	static func mathSqrt(_ params: VerbParams) throws -> Value {
 		
-		guard let value = params.singleParam else {
-			return VerbResult.paramCountError(params.count, expected: 1)!
+		do {
+			let value = try params.singleParam()
+			guard let d = value.asDouble else {
+				throw LangError(.coercionNotPossible)
+			}
+			return sqrt(d)
 		}
-		
-		guard let d = value.asDouble else {
-			return VerbResult(error: LangError(.coercionNotPossible))
-		}
-		
-		return VerbResult(sqrt(d))
+		catch { throw error }
 	}
 }

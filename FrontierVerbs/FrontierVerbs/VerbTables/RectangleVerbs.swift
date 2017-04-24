@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 // No longer implemented.
 // These were for QuickDraw Rects, which are not the same as CGRect and NSRect.
@@ -18,12 +19,12 @@ struct RectangleVerbs: VerbTable {
 		case set = "set"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) -> VerbResult {
+	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let _ = Verb(rawValue: lowerVerbName) else {
-			return VerbResult.verbNotFound
+			throw LangError(.verbNotFound)
 		}
 		
-		return VerbResult.noLongerImplemented
+		return false
 	}
 }
