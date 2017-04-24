@@ -127,8 +127,7 @@
 				8481D3921EAC1A74008DBA8A /* Enum.swift */,
 				8481D3961EAC247D008DBA8A /* OSType-Extension.swift */,
 				8481D36B1EAB00F9008DBA8A /* Value */,
-				8481D3601EA9B09F008DBA8A /* CodeTreeNode.swift */,
-				8481D3641EA9B177008DBA8A /* CodeTreeType.swift */,
+				84F908AA1EADABED00001B96 /* Code */,
 				8481D3661EA9B353008DBA8A /* LangError.swift */,
 				84553AA51EA9A30E002FC299 /* Info.plist */,
 				84553AAE1EA9A30E002FC299 /* FrontierDataTests */,
@@ -179,6 +178,15 @@
 				8481D38A1EABD8DD008DBA8A /* ValueRecord.swift */,
 			);
 			name = Value;
+			sourceTree = "<group>";
+		};
+		84F908AA1EADABED00001B96 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				8481D3601EA9B09F008DBA8A /* CodeTreeNode.swift */,
+				8481D3641EA9B177008DBA8A /* CodeTreeType.swift */,
+			);
+			name = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

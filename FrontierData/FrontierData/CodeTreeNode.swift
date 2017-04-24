@@ -8,11 +8,22 @@
 
 import Foundation
 
-public struct CodeTreeNode {
+public class CodeTreeNode {
 	
-	let nodeType: CodeTreeType
-	let value: Value?
-	let lineNumber: Int?
-	let characterIndex: Int?
-	let params: [CodeTreeNode]?
+	public let nodeType: CodeTreeType
+	public let value: Value?
+	public let lineNumber: Int?
+	public let characterIndex: Int?
+	public let link: CodeTreeNode?
+	public let params: [CodeTreeNode]?
+	
+	public init(nodeType: CodeTreeType, value: Value?, lineNumber: Int?, characterIndex: Int?, link: CodeTreeNode?, params: [CodeTreeNode]?) {
+		
+		self.nodeType = nodeType
+		self.value = value
+		self.lineNumber = lineNumber
+		self.characterIndex = characterIndex
+		self.link = link
+		self.params = params
+	}
 }

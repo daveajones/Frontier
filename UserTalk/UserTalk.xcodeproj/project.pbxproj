@@ -10,6 +10,8 @@
 		849023F11E9EC3C5002D1BA7 /* UserTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849023E71E9EC3C5002D1BA7 /* UserTalk.framework */; };
 		849023F61E9EC3C5002D1BA7 /* UserTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849023F51E9EC3C5002D1BA7 /* UserTalkTests.swift */; };
 		849023F81E9EC3C5002D1BA7 /* UserTalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 849023EA1E9EC3C5002D1BA7 /* UserTalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F908AD1EADAC4400001B96 /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F908AC1EADAC4400001B96 /* FrontierData.framework */; };
+		84F908AF1EADAC7C00001B96 /* LangEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F908AE1EADAC7C00001B96 /* LangEvaluator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		849023F01E9EC3C5002D1BA7 /* UserTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		849023F51E9EC3C5002D1BA7 /* UserTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTalkTests.swift; sourceTree = "<group>"; };
 		849023F71E9EC3C5002D1BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F908AC1EADAC4400001B96 /* FrontierData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FrontierData.framework; path = "../../../Library/Developer/Xcode/DerivedData/Frontier-fcajnrwwhuhnzbdirndityaaqnhy/Build/Products/Debug/FrontierData.framework"; sourceTree = "<group>"; };
+		84F908AE1EADAC7C00001B96 /* LangEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LangEvaluator.swift; path = UserTalk/LangEvaluator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F908AD1EADAC4400001B96 /* FrontierData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,9 +59,11 @@
 			isa = PBXGroup;
 			children = (
 				849023EA1E9EC3C5002D1BA7 /* UserTalk.h */,
+				84F908AE1EADAC7C00001B96 /* LangEvaluator.swift */,
 				849023EB1E9EC3C5002D1BA7 /* Info.plist */,
 				849023F41E9EC3C5002D1BA7 /* UserTalkTests */,
 				849023E81E9EC3C5002D1BA7 /* Products */,
+				84F908AB1EADAC4400001B96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,14 @@
 				849023F71E9EC3C5002D1BA7 /* Info.plist */,
 			);
 			path = UserTalkTests;
+			sourceTree = "<group>";
+		};
+		84F908AB1EADAC4400001B96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84F908AC1EADAC4400001B96 /* FrontierData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +156,7 @@
 					849023E61E9EC3C5002D1BA7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9C84TZ7Q6Z;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					849023EF1E9EC3C5002D1BA7 = {
@@ -190,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F908AF1EADAC7C00001B96 /* LangEvaluator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +328,7 @@
 		849023FC1E9EC3C5002D1BA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -325,6 +343,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.UserTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -332,6 +351,7 @@
 		849023FD1E9EC3C5002D1BA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -353,6 +373,7 @@
 		849023FF1E9EC3C5002D1BA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9C84TZ7Q6Z;
 				INFOPLIST_FILE = UserTalkTests/Info.plist;
@@ -366,6 +387,7 @@
 		849024001E9EC3C5002D1BA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9C84TZ7Q6Z;
 				INFOPLIST_FILE = UserTalkTests/Info.plist;
