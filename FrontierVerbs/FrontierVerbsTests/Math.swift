@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import FrontierVerbs
+@testable import FrontierVerbs
 import FrontierData
 
 class Math: XCTestCase, VerbAppDelegate {

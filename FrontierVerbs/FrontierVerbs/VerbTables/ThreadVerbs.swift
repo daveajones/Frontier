@@ -8,6 +8,7 @@
 
 import Foundation
 import FrontierData
+import FrontierCore
 
 // Original Frontier used cooperative threads.
 // Some of these verbs don’t make sense in a preemptive world, and are no longer implemented.
@@ -51,9 +52,9 @@ struct ThreadVerbs: VerbTable {
 			case .callScript:
 				return try callScript(params)
 			case .getCurrentID:
-				return try getCurrentID(params)
+				return getCurrentID(params)
 			case .getCount:
-				return try getCount(params)
+				return getCount(params)
 			case .getNthID:
 				return try getNthID(params)
 			case .sleep:
@@ -101,14 +102,14 @@ private extension ThreadVerbs {
 		throw LangError(.unimplementedVerb)
 	}
 	
-	static func getCurrentID(_ params: VerbParams) throws -> Value {
+	static func getCurrentID(_ params: VerbParams) -> Value {
 		
-		throw LangError(.unimplementedVerb)
+		return ThreadSupervisor.currentThreadID()
 	}
 	
-	static func getCount(_ params: VerbParams) throws -> Value {
+	static func getCount(_ params: VerbParams) -> Value {
 		
-		throw LangError(.unimplementedVerb)
+		return ThreadSupervisor.numberOfThreads
 	}
 	
 	static func getNthID(_ params: VerbParams) throws -> Value {

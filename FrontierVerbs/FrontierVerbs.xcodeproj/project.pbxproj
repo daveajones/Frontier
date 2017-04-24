@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		840D8C8F1EAD7A750034EA3E /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D8C8E1EAD7A750034EA3E /* Math.swift */; };
+		840D8CA61EAD8F660034EA3E /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D8CA51EAD8F660034EA3E /* Thread.swift */; };
+		840D8CA81EAD9DAC0034EA3E /* FrontierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840D8CA71EAD9DAC0034EA3E /* FrontierCore.framework */; };
 		8481D36A1EA9B54E008DBA8A /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8481D3691EA9B54E008DBA8A /* FrontierData.framework */; };
 		84832F081EA3350F006B1665 /* BitVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE0F021EA2D4AB000BF307 /* BitVerbs.swift */; };
 		84832F091EA3350F006B1665 /* ClipboardVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE0F041EA2D4E7000BF307 /* ClipboardVerbs.swift */; };
@@ -79,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		840D8C8E1EAD7A750034EA3E /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		840D8CA51EAD8F660034EA3E /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		840D8CA71EAD9DAC0034EA3E /* FrontierCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FrontierCore.framework; path = ../FrontierCore/build/Debug/FrontierCore.framework; sourceTree = "<group>"; };
 		8481D3691EA9B54E008DBA8A /* FrontierData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FrontierData.framework; path = "../../../Library/Developer/Xcode/DerivedData/Frontier-fcajnrwwhuhnzbdirndityaaqnhy/Build/Products/Debug/FrontierData.framework"; sourceTree = "<group>"; };
 		84832F301EA5C123006B1665 /* Base64Verbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base64Verbs.swift; path = FrontierVerbs/VerbTables/Base64Verbs.swift; sourceTree = "<group>"; };
 		84832F321EA5C1BC006B1665 /* DLLVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DLLVerbs.swift; path = FrontierVerbs/VerbTables/DLLVerbs.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840D8CA81EAD9DAC0034EA3E /* FrontierCore.framework in Frameworks */,
 				8481D36A1EA9B54E008DBA8A /* FrontierData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +170,7 @@
 		8481D3681EA9B54E008DBA8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				840D8CA71EAD9DAC0034EA3E /* FrontierCore.framework */,
 				8481D3691EA9B54E008DBA8A /* FrontierData.framework */,
 			);
 			name = Frameworks;
@@ -201,6 +207,7 @@
 			children = (
 				84ECA7CC1E9EC1CF00CB76EC /* FrontierVerbsTests.swift */,
 				840D8C8E1EAD7A750034EA3E /* Math.swift */,
+				840D8CA51EAD8F660034EA3E /* Thread.swift */,
 				84ECA7CE1E9EC1CF00CB76EC /* Info.plist */,
 			);
 			path = FrontierVerbsTests;
@@ -436,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ECA7CD1E9EC1CF00CB76EC /* FrontierVerbsTests.swift in Sources */,
+				840D8CA61EAD8F660034EA3E /* Thread.swift in Sources */,
 				840D8C8F1EAD7A750034EA3E /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

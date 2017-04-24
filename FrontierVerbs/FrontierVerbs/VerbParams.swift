@@ -13,6 +13,7 @@ public typealias NamedParams = [String: Value]
 
 public struct VerbParams {
 
+	static let empty = VerbParams([])
 	let ordered: [Value]
 	let named: NamedParams
 	let count: Int

@@ -9,7 +9,7 @@
 import Foundation
 import FrontierData
 
-public struct MathVerbs: VerbTable {
+struct MathVerbs: VerbTable {
 	
 	private enum Verb: String {
 		case min = "min"
