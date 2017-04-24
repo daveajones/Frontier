@@ -9,7 +9,7 @@
 import Foundation
 import FrontierData
 
-struct MathVerbs: VerbTable {
+public struct MathVerbs: VerbTable {
 	
 	private enum Verb: String {
 		case min = "min"
@@ -17,7 +17,7 @@ struct MathVerbs: VerbTable {
 		case sqrt = "sqrt"
 	}
 	
-	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
+	public static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value {
 		
 		guard let verb = Verb(rawValue: lowerVerbName) else {
 			throw LangError(.verbNotFound)

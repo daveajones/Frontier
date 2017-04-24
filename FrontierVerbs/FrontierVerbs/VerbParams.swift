@@ -9,13 +9,15 @@
 import Cocoa
 import FrontierData
 
-struct VerbParams {
+public typealias NamedParams = [String: Value]
+
+public struct VerbParams {
 
 	let ordered: [Value]
-	let named: [String: Value]
+	let named: NamedParams
 	let count: Int
 	
-	init(ordered: [Value], named: [String: Value]) {
+	public init(_ ordered: [Value], named: NamedParams = NamedParams()) {
 		
 		self.ordered = ordered
 		self.named = named

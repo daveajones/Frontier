@@ -9,7 +9,7 @@
 import Foundation
 import FrontierData
 
-protocol VerbTable {
+public protocol VerbTable {
 	
 	static func evaluate(_ lowerVerbName: String, _ params: VerbParams, _ verbAppDelegate: VerbAppDelegate) throws -> Value
 }

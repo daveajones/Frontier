@@ -76,7 +76,7 @@ extension Date: Value {
 	
 	public var asDouble: Double? {
 		get {
-			return nil //TODO
+			return self.timeIntervalSince1904
 		}
 	}
 	

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840D8C8F1EAD7A750034EA3E /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D8C8E1EAD7A750034EA3E /* Math.swift */; };
 		8481D36A1EA9B54E008DBA8A /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8481D3691EA9B54E008DBA8A /* FrontierData.framework */; };
 		84832F081EA3350F006B1665 /* BitVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE0F021EA2D4AB000BF307 /* BitVerbs.swift */; };
 		84832F091EA3350F006B1665 /* ClipboardVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE0F041EA2D4E7000BF307 /* ClipboardVerbs.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840D8C8E1EAD7A750034EA3E /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		8481D3691EA9B54E008DBA8A /* FrontierData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FrontierData.framework; path = "../../../Library/Developer/Xcode/DerivedData/Frontier-fcajnrwwhuhnzbdirndityaaqnhy/Build/Products/Debug/FrontierData.framework"; sourceTree = "<group>"; };
 		84832F301EA5C123006B1665 /* Base64Verbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base64Verbs.swift; path = FrontierVerbs/VerbTables/Base64Verbs.swift; sourceTree = "<group>"; };
 		84832F321EA5C1BC006B1665 /* DLLVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DLLVerbs.swift; path = FrontierVerbs/VerbTables/DLLVerbs.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				84ECA7CC1E9EC1CF00CB76EC /* FrontierVerbsTests.swift */,
+				840D8C8E1EAD7A750034EA3E /* Math.swift */,
 				84ECA7CE1E9EC1CF00CB76EC /* Info.plist */,
 			);
 			path = FrontierVerbsTests;
@@ -433,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ECA7CD1E9EC1CF00CB76EC /* FrontierVerbsTests.swift in Sources */,
+				840D8C8F1EAD7A750034EA3E /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

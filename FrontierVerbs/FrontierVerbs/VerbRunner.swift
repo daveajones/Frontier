@@ -9,7 +9,7 @@
 import Foundation
 import FrontierData
 
-struct VerbRunner {
+public struct VerbRunner {
 	
 	private let verbAppDelegate: VerbAppDelegate
 	
