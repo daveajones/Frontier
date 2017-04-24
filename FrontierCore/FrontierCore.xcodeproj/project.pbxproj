@@ -10,6 +10,7 @@
 		840D8C911EAD86A90034EA3E /* ThreadSupervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D8C901EAD86A90034EA3E /* ThreadSupervisor.swift */; };
 		840D8C951EAD89190034EA3E /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D8C941EAD89190034EA3E /* Blocks.swift */; };
 		840D8CA41EAD8B200034EA3E /* ManagedThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D8CA31EAD8B200034EA3E /* ManagedThread.swift */; };
+		840D8CAA1EAD9F670034EA3E /* ThreadSupervisorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D8CA91EAD9F670034EA3E /* ThreadSupervisorTests.swift */; };
 		84ECA79A1E9DC20300CB76EC /* FrontierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7901E9DC20300CB76EC /* FrontierCore.framework */; };
 		84ECA79F1E9DC20300CB76EC /* FrontierCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA79E1E9DC20300CB76EC /* FrontierCoreTests.swift */; };
 		84ECA7A11E9DC20300CB76EC /* FrontierCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 84ECA7931E9DC20300CB76EC /* FrontierCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,7 @@
 		840D8C901EAD86A90034EA3E /* ThreadSupervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreadSupervisor.swift; path = FrontierCore/ThreadSupervisor.swift; sourceTree = "<group>"; };
 		840D8C941EAD89190034EA3E /* Blocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Blocks.swift; path = FrontierCore/Blocks.swift; sourceTree = "<group>"; };
 		840D8CA31EAD8B200034EA3E /* ManagedThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedThread.swift; path = FrontierCore/ManagedThread.swift; sourceTree = "<group>"; };
+		840D8CA91EAD9F670034EA3E /* ThreadSupervisorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSupervisorTests.swift; sourceTree = "<group>"; };
 		84ECA7901E9DC20300CB76EC /* FrontierCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FrontierCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ECA7931E9DC20300CB76EC /* FrontierCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FrontierCore.h; path = FrontierCore/FrontierCore.h; sourceTree = "<group>"; };
 		84ECA7941E9DC20300CB76EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = FrontierCore/Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				84ECA79E1E9DC20300CB76EC /* FrontierCoreTests.swift */,
+				840D8CA91EAD9F670034EA3E /* ThreadSupervisorTests.swift */,
 				84ECA7A01E9DC20300CB76EC /* Info.plist */,
 			);
 			path = FrontierCoreTests;
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ECA79F1E9DC20300CB76EC /* FrontierCoreTests.swift in Sources */,
+				840D8CAA1EAD9F670034EA3E /* ThreadSupervisorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
