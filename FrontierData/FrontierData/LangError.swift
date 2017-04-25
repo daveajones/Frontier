@@ -217,17 +217,14 @@ public struct LangError: Error {
 	public let lineNumber: Int?
 	public let characterIndex: Int?
 	public let message: String?
+	public let representedObject: Any?
 	
-	public init(_ errorType: LangErrorType, lineNumber: Int? = nil, characterIndex: Int? = nil, message: String? = nil) {
+	public init(_ errorType: LangErrorType, lineNumber: Int? = nil, characterIndex: Int? = nil, message: String? = nil, representedObject: Any? = nil) {
 		
 		self.errorType = errorType
 		self.lineNumber = lineNumber
 		self.characterIndex = characterIndex
 		self.message = message
-	}
-	
-	func errorByAdding(lineNumber: Int, characterIndex: Int) -> LangError {
-		
-		return LangError(errorType, lineNumber: lineNumber, characterIndex: characterIndex)
+		self.representedObject = representedObject
 	}
 }

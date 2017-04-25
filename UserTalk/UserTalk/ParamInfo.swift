@@ -25,7 +25,6 @@ private enum OperationParamInfo {
 	}
 }
 
-
 extension CodeTreeType {
 	
 	private static let operationParamInfo: [CodeTreeType: OperationParamInfo] = [

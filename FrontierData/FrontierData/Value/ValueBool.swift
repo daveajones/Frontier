@@ -87,4 +87,10 @@ extension Bool: Value {
 			return nil //TODO
 		}
 	}
+	
+	public func unaryMinusValue() throws -> Value {
+		
+		return self
+	}
+
 }

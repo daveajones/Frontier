@@ -87,4 +87,9 @@ extension Double: Value {
 			return nil //TODO
 		}
 	}
+	
+	public func unaryMinusValue() throws -> Value {
+		
+		return 0 - self
+	}
 }
